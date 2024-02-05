@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 3: Interactive HTML Forms</title>
+</head>
+<body>
+    <h1>Interactive Forms in HTML</h1>
+
+    <!-- Simple Contact Form -->
+    <form action="submit.php" method="post">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Form with Different Input Types -->
+    <h2>Form with Various Inputs</h2>
+    <form>
+        <input type="radio" id="option1" name="option" value="1">
+        <label for="option1">Option 1</label><br>
+
+        <input type="radio" id="option2" name="option" value="2">
+        <label for="option2">Option 2</label><br>
+
+        <input type="checkbox" id="subscribe" name="subscribe" value="subscribe">
+        <label for="subscribe">Subscribe to Newsletter</label><br>
+
+        <label for="feedback">Feedback:</label><br>
+        <textarea id="feedback" name="feedback"></textarea><br>
+
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>
