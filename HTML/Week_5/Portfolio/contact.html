@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <meta name="description" content="Contact information for [Your Name].">
+    <meta name="keywords" content="contact, email, phone number">
+    <meta name="author" content="[Your Name]">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <a href="index.html">MyPortfolio</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-label="Contact Me">
+            <h1>Contact Me</h1>
+            <form action="submit_contact_info" method="post">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label>Would you like us to contact you back?</label>
+                    <div>
+                        <input type="radio" id="contact_yes" name="contact_back" value="yes">
+                        <label for="contact_yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="contact_no" name="contact_back" value="no">
+                        <label for="contact_no">No</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Send Message</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <small>&copy; 2024 Your Name. All Rights Reserved.</small>
+    </footer>
+</body>
+</html>
