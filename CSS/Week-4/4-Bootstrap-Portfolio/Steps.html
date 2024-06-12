@@ -1,0 +1,320 @@
+<!-- PORTFOLIO SECTION -->
+<!-- Start with the <section> element that includes an ID attribute set to "portfolio" and a class set to "bg-primary". Also create a <div> element with the "container-fluid" class to create a container, and the "py-5" class to add padding to the top and bottom. Within the container add two <div> elements with a class set to "row".-->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<div class="row"></div>
+
+		<div class="row"></div>
+</section>
+
+<!-- 1. The first row will contain our section title. Add the classes "text-white" and "text-center" to the opening <div> tag of the first row. Add another <div> element within the row, and set the class to "col" to make it a column. Add an <h2> element with the classes "display-4" and "font-weight-bold" to make the text appear a little bigger and bold. Set the content of the <h2> element to "Portfolio". Finally, add an <hr> element with the classes "bg-white" to make it white, and "mb-5" to increase the bottom margin. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<div class="row"></div>
+	</div>
+</section>
+
+<!-- 2. The second row will be were our portfolio items will be placed. Add the classes "row-cols-1", "row-cols-md-2" and "row-cols-lg-3"  to the second row. This changes the number of items shown within each row to only 1 item for small screens, 2 items for medium screens, and 3 items for larger screens.-->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3"></div>
+	</div>
+</section>
+
+<!-- 3. Within the second row, add a <div> element. Add the classes "col" to create a column, and "mb-4" to add a margin to the bottom of the element. The "Portfolio Item" and "Portfolio Item End" have been added above and below this element to help us in a later step.-->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4"></div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 4. In the column we just created, add another <div> element with the class "card" that will be used for our portfolio item. Also include the following classes:
+	a. bg-light: to make the background a light color.
+	b. text-center: to align the text center.
+	c. border-light: to create a light border.
+	d. shadow: to add a shadow to pull the card off the page slightly.
+	e. h-100: to make all of the cards the same height, 100% of the height of the row. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100"></div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 5. Within the <div> card element we just created, add two <div> elements The first with a class of "card-body" to create the body of our portfolio item, the second with a class of "card-footer" to create a footer section for our portfolio item. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<div class="card-body"></div>
+					<div class="card-footer"></div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 6. Within the card body <div> element, add the following elements:
+		a. <h3> with the class "card-title" to title the portfolio item.
+		b. <hr> with the class "bg-primary" to separate the portfolio title from the description.
+		c. <p> with the class "card-text" to add a description to our portfolio item. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<div class="card-body">
+						<h3 class="card-title"></h3>
+						<hr class="bg-primary" />
+						<p class="card-text"></p>
+					</div>
+					<div class="card-footer"></div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 7. Within the <h3> element, add a title for the first portfolio item. This example will use a generic text. Then, in the <p> element add a brief description of this portfolio item. Again, this example will use some generic text-->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<div class="card-body">
+						<h3 class="card-title">Work Example 1</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<div class="card-footer"></div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 8. In the card footer <div> element, add a link <a> element with the classes "btn", "btn-outline-primary", "btn-lg", and "mt-2" to create a large blue outlined button with a top margin. Set the content of the <a> element to "Read More". This can link to another page that provides a more detailed description of this portfolio option. This footer section is optional, if there is not a page that contains more detail about this portfolio item the card footer can be removed. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<div class="card-body">
+						<h3 class="card-title">Work Example 1</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<!-- Optional Footer with Button-->
+					<div class="card-footer">
+						<a class="btn btn-outline-primary btn-lg mt-2" role="button" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 9. If the portfolio item has an image, we can add an image to the top by adding the <img> element directly after the card opening tag, and above the card body opening tag. Add the link to the image source, and set the class to "card-img-top" to place the image on the top. To make the image fit better, add the style attribute. In the value of the style attribute add the declarations: "object-fit: cover;" to make the image fit to the width of the portfolio item, and "height: 15em;" to set the height of the image to 15 times the height of the text. Be sure to add a description of the image using the alt attribute. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<!-- Optional Card Image -->
+					<img src="https://images.unsplash.com/photo-1541753866388-0b3c701627d3" alt="Art" class="card-img-top" style="object-fit: cover; height: 15em;" />
+					<div class="card-body">
+						<h3 class="card-title">Work Example 1</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<!-- Optional Footer with Button-->
+					<div class="card-footer">
+						<a class="btn btn-outline-primary btn-lg mt-2" role="button" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>
+
+<!-- 10. To add additional portfolio items, select the code from the "Portfolio Item" comment, to the "Portfolio Item End" comment, and then past the copy directly below the first portfolio item. Add at least two more portfolio items, for a total of three. Replace the card image, card title, card text, and card-footer as needed for each item. -->
+<section id="portfolio" class="bg-primary">
+	<div class="container-fluid py-5">
+		<!-- Portfolio Section Title -->
+		<div class="row text-white text-center">
+			<div class="col">
+				<h2 class="display-4 font-weight-bold">Portfolio</h2>
+				<hr class="bg-white mb-5" />
+			</div>
+		</div>
+
+		<!-- Portfolio Items Row Start -->
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<!-- Optional Card Image -->
+					<img src="https://images.unsplash.com/photo-1541753866388-0b3c701627d3" alt="Art" class="card-img-top" style="object-fit: cover; height: 15em;" />
+					<div class="card-body">
+						<h3 class="card-title">Work Example 1</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<!-- Optional Footer with Button-->
+					<div class="card-footer">
+						<a class="btn btn-outline-primary btn-lg mt-2" role="button" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<!-- Optional Card Image -->
+					<img src="https://images.unsplash.com/photo-1516705564083-34e4e9e704e9" alt="Art" class="card-img-top" style="object-fit: cover; height: 15em;" />
+					<div class="card-body">
+						<h3 class="card-title">Work Example 2</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<!-- Optional Footer with Button-->
+					<div class="card-footer">
+						<a class="btn btn-outline-primary btn-lg mt-2" role="button" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+
+			<!-- Portfolio Item -->
+			<div class="col mb-4">
+				<div class="card bg-light text-center border-light shadow h-100">
+					<!-- Optional Card Image -->
+					<img src="https://images.unsplash.com/photo-1461344577544-4e5dc9487184" alt="Art" class="card-img-top" style="object-fit: cover; height: 15em;" />
+					<div class="card-body">
+						<h3 class="card-title">Work Example 3</h3>
+						<hr class="bg-primary" />
+						<p class="card-text">
+							This is a brief description of this portfolio item. This can describe th work, provide steps taken, or give a summary of responsibilities. The optional link at the bottom could navigate to a page providing more details.
+						</p>
+					</div>
+					<!-- Optional Footer with Button-->
+					<div class="card-footer">
+						<a class="btn btn-outline-primary btn-lg mt-2" role="button" href="#">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- Portfolio Item End -->
+		</div>
+	</div>
+</section>

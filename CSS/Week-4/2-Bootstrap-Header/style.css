@@ -1,0 +1,10 @@
+.mainHeader {
+	height: 100vh;
+	padding-bottom: 5rem;
+	min-height: 40em;
+	background-image: url("https://images.unsplash.com/photo-1471958680802-1345a694ba6d");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}

@@ -1,0 +1,333 @@
+<!-- CONTACT FORM -->
+<!-- Start with the basic form that was created during the HTML class. If you would like to create a new form, include these basic fields: name, email address, and a comments text area. Surround the form element with a <section> element that is assigned the ID "contact", and a <div> element with the class "container" and "my-5" to create a container with a top and bottom margin. -->
+<!-- Contact Form -->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Contact Form -->
+		<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+			<label for="name">Full Name:</label>
+			<input type="text" id="name" placeholder="Full Name" name="name" />
+
+			<label for="email">Email address:</label>
+			<input type="email" id="email" placeholder="name@example.com" name="email" />
+
+			<p>Can we contact you back?</p>
+			<input type="radio" name="contact-back" id="yes" value="Yes" checked />
+			<label for="yes">Yes</label>
+			<input type="radio" name="contact-back" id="no" value="No" />
+			<label for="no">No</label>
+
+			<label for="comments">Comments:</label>
+			<textarea id="comments" rows="3" name="comments"></textarea>
+
+			<button type="submit" role="button">Submit</button>
+		</form>
+	</div>
+</section>
+
+<!-- 1. Complete each item below:
+		a. Below the first <div> element, and above the <form> element, add another <div> element with the class attribute set to "row justify-content-center text-center" to create a section title row.	
+		b. Within this row <div> element, add another <div> element with the class "col-md-6" to create a column. Within the column, add an <h2> element with the classes "display-4 font-weight-bold", and set the element's contents to "Contact Me" to create the section title. 
+		c. Below the <h2> element, add an <hr> element. -->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+			<label for="name">Full Name:</label>
+			<input type="text" id="name" placeholder="Full Name" name="name" />
+
+			<label for="email">Email address:</label>
+			<input type="email" id="email" placeholder="name@example.com" name="email" />
+
+			<p>Can we contact you back?</p>
+			<input type="radio" name="contact-back" id="yes" value="Yes" checked />
+			<label for="yes">Yes</label>
+			<input type="radio" name="contact-back" id="no" value="No" />
+			<label for="no">No</label>
+
+			<label for="comments">Comments:</label>
+			<textarea id="comments" rows="3" name="comments"></textarea>
+
+			<button type="submit" role="button">Submit</button>
+		</form>
+	</div>
+</section>
+
+<!-- 2. Surround the <form> element with two <div> elements. In the first <div> element created, add the classes "row" and "justify-content-center" to create a new row, and center the elements within it. In the second <div> element created, add the class "col-6" to make the element span 6 columns. -->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<label for="name">Full Name:</label>
+					<input type="text" id="name" placeholder="Full Name" name="name" />
+
+					<label for="email">Email address:</label>
+					<input type="email" id="email" placeholder="name@example.com" name="email" />
+
+					<p>Can we contact you back?</p>
+					<input type="radio" name="contact-back" id="yes" value="Yes" checked />
+					<label for="yes">Yes</label>
+					<input type="radio" name="contact-back" id="no" value="No" />
+					<label for="no">No</label>
+
+					<label for="comments">Comments:</label>
+					<textarea id="comments" rows="3" name="comments"></textarea>
+
+					<button type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 3. Within the <form> element, surround each form field <input> and their <label> with a <div> element. In the case of the radio buttons, surround both buttons (the associated <input> and <label> elements), and the question above the buttons, with a <div>. Add the class attribute and set it to "form-group".  -->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<div class="form-group">
+						<label for="name">Full Name:</label>
+						<input type="text" id="name" placeholder="Full Name" name="name" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="email" id="email" placeholder="name@example.com" name="email" />
+					</div>
+
+					<div class="form-group">
+						<p>Can we contact you back?</p>
+						<input type="radio" name="contact-back" id="yes" value="Yes" checked />
+						<label for="yes">Yes</label>
+						<input type="radio" name="contact-back" id="no" value="No" />
+						<label for="no">No</label>
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Comments:</label>
+						<textarea id="comments" rows="3" name="comments"></textarea>
+					</div>
+
+					<button type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 4. For the radio button form fields, surround each input and label pair with a <div> element. Set the class on each to "form-check". -->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<div class="form-group">
+						<label for="name">Full Name:</label>
+						<input type="text" id="name" placeholder="Full Name" name="name" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="email" id="email" placeholder="name@example.com" name="email" />
+					</div>
+
+					<div class="form-group">
+						<p>Can we contact you back?</p>
+						<div class="form-check">
+							<input type="radio" name="contact-back" id="yes" value="Yes" checked />
+							<label for="yes">Yes</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" name="contact-back" id="no" value="No" />
+							<label for="no">No</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Comments:</label>
+						<textarea id="comments" rows="3" name="comments"></textarea>
+					</div>
+
+					<button type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 5. Add the class to each <input>, and <textarea> element. Set the value for the Full Name, Email Address and Comments input fields to "form-control" to identify these as the form controls. Set the class of the radio button input fields to "form-check-input". Add the class attribute to the labels for each radio button and set their value to "form-check-label"-->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<div class="form-group">
+						<label for="name">Full Name:</label>
+						<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" />
+					</div>
+
+					<div class="form-group">
+						<p>Can we contact you back?</p>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes" checked />
+							<label class="form-check-label" for="yes">Yes</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="no" value="No" />
+							<label class="form-check-label" for="no">No</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Comments:</label>
+						<textarea id="comments" class="form-control" rows="3" name="comments"></textarea>
+					</div>
+
+					<button type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 6. Change the <p> elements for the radio button question to <label> elements. Set the class to "control-label".-->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<div class="form-group">
+						<label for="name">Full Name:</label>
+						<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label">Can we contact you back?</label>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes" checked />
+							<label class="form-check-label" for="yes">Yes</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="no" value="No" />
+							<label class="form-check-label" for="no">No</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Comments:</label>
+						<textarea id="comments" class="form-control" rows="3" name="comments"></textarea>
+					</div>
+
+					<button type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 7. Add the class attribute to the <button> element. Add the classes: "btn", "btn-primary", and "mb-2".-->
+<section id="contact">
+	<div class="container my-5">
+		<!-- Section Title -->
+		<div class="row justify-content-center text-center">
+			<div class="col-md-6">
+				<h2 class="display-4 font-weight-bold">Contact Me</h2>
+				<hr />
+			</div>
+		</div>
+		<!-- Contact Form -->
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<form action="http://form-test.slccwebdev.com/form-success.php" method="POST">
+					<div class="form-group">
+						<label for="name">Full Name:</label>
+						<input type="text" class="form-control" id="name" placeholder="Full Name" name="name" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" />
+					</div>
+
+					<div class="form-group">
+						<label class="control-label">Can we contact you back?</label>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="yes" value="Yes" checked />
+							<label class="form-check-label" for="yes">Yes</label>
+						</div>
+						<div class="form-check">
+							<input type="radio" class="form-check-input" name="contact-back" id="no" value="No" />
+							<label class="form-check-label" for="no">No</label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="comments">Comments:</label>
+						<textarea id="comments" class="form-control" rows="3" name="comments"></textarea>
+					</div>
+
+					<button class="btn btn-primary mb-2" type="submit" role="button">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
