@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Array Loop Example</title>
+	</head>
+	<body>
+		<h3 id="results"></h3>
+
+		<script>
+			/*****************
+            CREATE ARRAY
+            Try adding a 
+            few of your
+            favorites too
+            *****************/
+			var flavors = ["Vanilla", "Cherry", "Chocolate"];
+
+			/***********************
+            CREATE A VARIABLE THAT 
+            HOLDS THE STATEMENT
+            ***********************/
+			var favFlavors = "My Favorite Ice-cream flavors are: <ol>";
+
+			/***********************
+            LOOP THROUGH ALL THE VALUES 
+            IN THE FLAVORS ARRAY AND 
+            APPEND ANOTHER LINE ITEM 
+            FOR EACH ITEM IN THE ARRAY
+            ***********************/
+			for (i = 0; i < flavors.length; i++) {
+				favFlavors += "<li>" + flavors[i] + "</li>";
+			}
+
+			/*****************************
+            APPEND THE CLOSING </OL> 
+            TAG TO THE END OF THE STRING
+            *****************************/
+			favFlavors += "</ol>";
+
+			/***********************
+            OUTPUT THE COMPLETE STRING
+            TO THE ELEMENT WITH THE
+            ID OF RESULTS
+            ***********************/
+			document.querySelector("#results").innerHTML = favFlavors;
+		</script>
+	</body>
+</html>

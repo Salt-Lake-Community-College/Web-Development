@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Basic Try Catch Throw Example</title>
+	</head>
+	<body>
+		<p id="inst">Enter something into the field and click submit.</p>
+		<input type="text" id="string" />
+		<button id="btn" onclick="tryIt()">Submit</button>
+		<p id="results"></p>
+
+		<script>
+			function tryIt() {
+				try {
+					var newText = document.getElementById("string").value;
+					if (newText === "") {
+						throw "Field cannot be empty.";
+					}
+					document.getElementById("results").innerHTML = "Your Input: <b>" + newText + "</b>";
+				} catch (error) {
+					document.getElementById("results").innerHTML = "Incorrect Input: <b>" + error + "</b>";
+				}
+			}
+		</script>
+	</body>
+</html>

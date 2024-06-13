@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Array Methods Solution</title>
+	</head>
+	<body>
+		<script>
+			let clr = ["Red", "Blue", "Green"];
+			//Modify the document write statement below to do the following:
+
+			// 1. Write the length of the array to the screen
+			document.write(clr.length);
+
+			// 2. Sort the array
+			document.write(clr.sort());
+
+			// 3. Push the item "Orange" to the array
+			document.write(clr.push("Orange"));
+
+			// 4. Pop the last element from the array
+			document.write(clr.pop());
+
+			// 5. Remove the first item from the array using shift
+			document.write(clr.shift());
+
+			// 6. Use unshift to add "Orange" and "Purple" to the array
+			document.write(clr.unshift("Orange", "Purple"));
+
+			// 7. Use splice to remove blue (index 1) and add "Orange" and "Purple"
+			document.write(clr.splice(1, 1, "Orange", "Purple"));
+		</script>
+	</body>
+</html>

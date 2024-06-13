@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			label,
+			input,
+			button {
+				display: block;
+				margin: 5px;
+			}
+
+			#copyToField,
+			#copy {
+				display: inline-block;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<p id="demo">This is the demo paragraph.</p>
+		<fieldset>
+			<label for="input1">Enter some text that will be used to modify the text in the paragraph above:</label>
+			<input type="text" id="input1" name="textInput" />
+
+			<p>Select what to do with the text in the paragraph above.</p>
+			<button id="append">Append the text to the end of the paragraph above.</button>
+			<button id="preappend">Pre-append the text to the beginning of the paragraph above.</button>
+			<button id="replace">Replace the text in the paragraph above.</button>
+			<button id="copy">Copy the value of the first input field to the input on the right &gt</button>
+			<input type="text" id="copyToField" disabled />
+		</fieldset>
+
+		<script>
+			$("document").ready(function () {
+				//Appends the value of the input field to the end of the paragraph.
+				$("button#append").click(function () {
+					let value = $("#input1").val();
+					$("#demo").append(" <b>" + value + "</b>");
+				});
+
+				//Pre-appends the value of the input field to the beginning of the paragraph.
+				$("button#preappend").click(function () {
+					let value = $("#input1").val();
+					$("#demo").prepend("<b>" + value + "</b> ");
+				});
+
+				//Replaces the text in the paragrah with the text in the input field.
+				$("button#replace").click(function () {
+					let value = $("#input1").val();
+					$("#demo").html("<b>" + value + "</b>");
+				});
+
+				//Sets the value of the disabled second input field to the value of the first.
+				$("button#copy").click(function () {
+					let value = $("#input1").val();
+					$("#copyToField").val(value);
+				});
+			});
+		</script>
+	</body>
+</html>

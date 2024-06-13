@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Array of Objects Example</title>
+	</head>
+	<body>
+		<h3 id="results"></h3>
+
+		<script>
+			/******************************
+            Define variables that select
+            HTML elements to return results
+            ******************************/
+			//Selects the element with ID "results"
+			var results = document.querySelector("#results");
+
+			/***********************
+            CREATE ARRAY OF OBJECTS
+            Try adding another object
+            ***********************/
+			var contacts = [
+				{ name: "John Doe", email: "jdoe@email.com" },
+
+				{ name: "Jane Doe", email: "janedoe@email.com" },
+
+				{ name: "Paul Smith", email: "psmith@email.com" },
+			];
+
+			/***************************
+            CREATE FUNCTION FOR RESULTS
+            ***************************/
+			function person(p) {
+				return "Name: " + contacts[p].name + "<br> Email: " + contacts[p].email;
+			}
+
+			/********************** 
+            SEND RESULTS TO SCREEN 
+            Change the number to
+            see the results.
+            **********************/
+			results.innerHTML = person(0);
+		</script>
+	</body>
+</html>

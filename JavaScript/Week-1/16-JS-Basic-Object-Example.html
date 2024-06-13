@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Basic Object Example</title>
+	</head>
+	<body>
+		<script>
+			let person = {
+				firstName: "John",
+				lastName: "Doe",
+				age: 36,
+				fullName: function () {
+					return this.firstName + " " + this.lastName;
+				},
+			};
+			//Recall each of the elements using the property name (LINE BREAKS ADDED FOR CLARITY)
+			document.write(person.firstName + "<br>");
+			document.write(person.lastName + "<br>");
+			document.write(person.age + "<br>");
+			document.write(person.fullName() + "<br>");
+		</script>
+	</body>
+</html>

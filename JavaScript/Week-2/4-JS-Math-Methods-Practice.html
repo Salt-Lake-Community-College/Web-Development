@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			div.intro {
+				font-size: 1.25em;
+				font-weight: bold;
+			}
+
+			ul.variables {
+				list-style-type: none;
+				margin-top: -20px;
+			}
+
+			li {
+				padding: 5px 0;
+			}
+
+			div.results > ul > li > span {
+				font-weight: bold;
+				display: block;
+				text-transform: uppercase;
+			}
+		</style>
+		<title>JS Math Methods Practice</title>
+	</head>
+	<body>
+		<h1>Math Object Methods</h1>
+		<div class="intro">
+			<p>Math object methods using the following values:</p>
+			<ul class="variables">
+				<li>variable a = <span id="var-a"></span></li>
+				<li>variable b = <span id="var-b"></span></li>
+				<li>variable c = <span id="var-c"></span></li>
+				<li>variable d = <span id="var-d"></span></li>
+			</ul>
+		</div>
+		<div class="results">
+			<h4>Results</h4>
+			<ul>
+				<li>The value of <b>a rounded</b> to the nearest whole number: <span id="round"></span></li>
+				<li>The value of <b>b to the power</b> of the value and type of <b>c</b>: <span id="pow"></span></li>
+				<li>The <b>absolute</b> value of <b>a</b>: <span id="abs"></span></li>
+				<li>The value <b>d rounded up</b> to the next whole number: <span id="ceil"></span></li>
+				<li>The value <b>d rounded down</b> to the next whole number: <span id="floor"></span></li>
+				<li>The <b>lowest value</b> in <b>a, b, c, and d</b>: <span id="min"></span></li>
+				<li>The <b>highest value</b> in <b>a, b, c, and d</b>: <span id="max"></span></li>
+				<li>A <b>random number</b> greater than or equal to 0, less than 1: <span id="random"></span></li>
+			</ul>
+		</div>
+
+		<script>
+			//Defines Variables
+			var a = -14.3;
+			var b = 5;
+			var c = 6;
+			var d = 4.6;
+
+			//Writes the value of the variable a to the span with ID var-a
+			document.getElementById("var-a").innerHTML = a;
+
+			//Writes the value of the variable b to the span with ID var-b
+			document.getElementById("var-b").innerHTML = b;
+
+			//Writes the value of the variable c to the span with ID var-c
+			document.getElementById("var-c").innerHTML = c;
+
+			//Writes the value of the variable d to the span with ID var-d
+			document.getElementById("var-d").innerHTML = d;
+
+			/*---------------RESULTS SECTION--------------------*/
+			//Rounds a to the nearest whole number
+			document.getElementById("round").innerHTML = Math.round(a);
+
+			//Returns b to the power of c
+			document.getElementById("pow").innerHTML = Math.pow(b, c);
+
+			//Returns the absolute value of a
+			document.getElementById("abs").innerHTML = Math.abs(a);
+
+			//Rounds d up to the next whole number
+			document.getElementById("ceil").innerHTML = Math.ceil(d);
+
+			//Rounds d down to the next whole number
+			document.getElementById("floor").innerHTML = Math.floor(d);
+
+			//Returns the lowest value in a, b, c, and d
+			document.getElementById("min").innerHTML = Math.min(a, b, c, d);
+
+			//Returns the highest value in a, b, c, and d
+			document.getElementById("max").innerHTML = Math.max(a, b, c, d);
+
+			//Returns a random number greater than or equal to 0, but less than 1
+			document.getElementById("random").innerHTML = Math.random();
+		</script>
+	</body>
+</html>

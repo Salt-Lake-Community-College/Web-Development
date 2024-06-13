@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.ancestors * {
+				display: block;
+				border: 2px solid lightgrey;
+				color: lightgrey;
+				padding: 5px;
+				margin: 15px;
+			}
+
+			.buttons {
+				text-align: center;
+				width: 500px;
+				border: 2px solid black;
+				padding: 10px 5px;
+				margin: 15px;
+			}
+
+			div > button {
+				margin: 0 5px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<div class="buttons">
+			<p>Toggle Span Element Visibility</p>
+			<button id="btnToggle">Toggle</button>
+			<div class="lstnrToggle">
+				<p>Add and Remove the click event listener to the toggle button.</p>
+				<button id="btnRemoveLstnr">Remove Listener</button>
+				<button id="btnAddLstnr">Add Listener</button>
+			</div>
+		</div>
+
+		<div class="ancestors">
+			body (great-grandparent)
+			<div style="width: 500px">
+				div (grandparent)
+				<ul>
+					ul (direct parent)
+					<li>
+						li (child)
+						<span>span (grandchild)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("ul").find("span").css({ color: "red", border: "2px solid red" });
+				//Toggles the selected element's visibility on button click
+				$("button#btnToggle").click(function () {
+					$("ul").find("span").toggle();
+				});
+
+				//Removed the click listener from the toggle button
+				$("button#btnRemoveLstnr").click(function () {
+					$("button#btnToggle").off("click");
+				});
+
+				//Adds the click listener and its function to the toggle button
+				$("button#btnAddLstnr").click(function () {
+					$("button#btnToggle").on("click", function () {
+						$("ul").find("span").toggle();
+					});
+				});
+				//Try adding an click event listener using the on() method for the span element to hide the element when it is clicked. Click on the toggle button to show the element again.
+			});
+		</script>
+	</body>
+</html>

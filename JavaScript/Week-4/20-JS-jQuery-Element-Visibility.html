@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.ancestors * {
+				display: block;
+				border: 2px solid lightgrey;
+				color: lightgrey;
+				padding: 5px;
+				margin: 15px;
+			}
+
+			.buttons {
+				text-align: center;
+				width: 500px;
+				border: 2px solid black;
+				padding: 10px 5px;
+				margin: 15px;
+			}
+
+			div > button {
+				margin: 0 5px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<div class="buttons">
+			<p>Change Span Element Visibility</p>
+			<button id="btnHide">Hide</button>
+			<button id="btnShow">Show</button>
+			<button id="btnToggle">Toggle</button>
+		</div>
+		<div class="ancestors">
+			body (great-grandparent)
+			<div style="width: 500px">
+				div (grandparent)
+				<ul>
+					ul (direct parent)
+					<li>
+						li (child)
+						<span>span (grandchild)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("ul").find("span").css({ color: "red", border: "2px solid red" });
+
+				//Hides the selected element on button click
+				$("button#btnHide").click(function () {
+					$("ul").find("span").hide();
+				});
+
+				//Shows the selected element on button click
+				$("button#btnShow").click(function () {
+					$("ul").find("span").show();
+				});
+
+				//Toggles the selected element's visibility on button click
+				$("button#btnToggle").click(function () {
+					$("ul").find("span").toggle();
+				});
+			});
+		</script>
+	</body>
+</html>

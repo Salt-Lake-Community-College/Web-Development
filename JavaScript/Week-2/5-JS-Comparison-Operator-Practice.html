@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			li {
+				padding: 5px 0;
+			}
+
+			li > span {
+				font-weight: bold;
+				display: block;
+				text-transform: uppercase;
+			}
+		</style>
+		<title>JS Comparison Operator Practice</title>
+	</head>
+	<body>
+		<h1>Results</h1>
+		<h3>Compare x = <span id="varx"></span> and y = <span id="vary"></span></h3>
+		<ul>
+			<li>The value of <b>x</b> is <b>equal (==)</b> to the value of <b>y</b>:<span id="equal"></span></li>
+			<li>The value and type of <b>x</b> is <b>equal (===)</b> to the value and type of <b>y</b>: <span id="allequal"></span></li>
+			<li>The value of <b>x</b> is <b>not equal (!=)</b> to the value of <b>y</b>: <span id="notequal"></span></li>
+			<li>The value and type of <b>x</b> is <b>not equal (!==)</b> to the value and type of <b>y</b>: <span id="allnotequal"></span></li>
+			<li>The value of <b>x</b> is <b>greater (&gt)</b> than to the value of <b>y</b>: <span id="greater"></span></li>
+			<li>The value of <b>x</b> is <b>less (&lt)</b> than to the value of <b>y</b>: <span id="less"></span></li>
+			<li>The value of <b>x</b> is <b>greater than or equal to (&gt=)</b> the value of <b>y</b>: <span id="greaterequal"></span></li>
+			<li>The value of <b>x</b> is <b>less than or equal to (&lt=)</b> the value of <b>y</b>: <span id="lessequal"></span></li>
+		</ul>
+
+		<script>
+			var x = 5;
+			var y = 6;
+
+			//Writes the value of the variable X to the span with ID varx
+			document.getElementById("varx").innerHTML = x;
+			//Writes the value of the variable Y to the span with ID vary
+			document.getElementById("vary").innerHTML = y;
+
+			//Compare if the values of x and y are equal
+			document.getElementById("equal").innerHTML = x == y;
+
+			//Compare if the values and data types of x and y are equal
+			document.getElementById("allequal").innerHTML = x === y;
+
+			//Compare if the values of x and y are not equal
+			document.getElementById("notequal").innerHTML = x != y;
+
+			//Compare if the values and data types of x and y are not equal
+			document.getElementById("allnotequal").innerHTML = x !== y;
+
+			//Compare if the value of x is greater than y
+			document.getElementById("greater").innerHTML = x > y;
+
+			//Compare if the value of x is less than y
+			document.getElementById("less").innerHTML = x < y;
+
+			//Compare if the value of x is greater than or equal to y
+			document.getElementById("greaterequal").innerHTML = x >= y;
+
+			//Compare if the value of x is less than or equal to y
+			document.getElementById("lessequal").innerHTML = x <= y;
+		</script>
+	</body>
+</html>

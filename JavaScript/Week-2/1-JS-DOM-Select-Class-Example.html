@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			#results {
+				font-size: 1.25em;
+			}
+		</style>
+		<title>JS DOM Select Class Example</title>
+	</head>
+	<body>
+		<h1>Hello World!</h1>
+		<p class="intro">The DOM is very useful.</p>
+		<p class="intro">
+			This example demonstrates the
+			<b>getElementsByClassName</b>
+			method.
+		</p>
+		<p id="results"></p>
+
+		<script>
+			//Assigns the variable to select by class name
+			var x = document.getElementsByClassName("intro");
+
+			//Assigns variable a number for the index number (Because there are two elements with the class "intro" this will be either index 0 or 1)
+			var i = 0;
+
+			//Sets the variable p based on the value of i, we will take a closer look at this later
+			if (i == 0) {
+				var p = "first";
+			} else if (i == 1) {
+				var p = "second";
+			}
+
+			//Sends results to the element with in ID "results" the "x[i].innerHTML" is the same as typing "document.getElementsByClassName('intro')[i].innerHTML"
+			document.getElementById("results").innerHTML = "<b>The " + p + " element (index " + i + ') with class="intro": </b>' + x[i].innerHTML;
+		</script>
+	</body>
+</html>

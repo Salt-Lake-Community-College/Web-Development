@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Loop Break with Multiple Criteria Example</title>
+	</head>
+	<body>
+		<script>
+			var x = 10;
+			document.write("Loop Start <br>");
+			/***************
+                RUN LOOP
+            ****************/
+			for (var i = 0; i < x; i++) {
+				/********************************
+                    EXIT LOOP IF CRITERIA MET
+                *********************************/
+				if (i == 5 && x < 11) {
+					break;
+				}
+				document.write(i + "<br>");
+			}
+			document.write("Loop Exited at " + i);
+		</script>
+	</body>
+</html>

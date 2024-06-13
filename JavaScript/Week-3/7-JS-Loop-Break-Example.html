@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Loop Break Example</title>
+	</head>
+	<body>
+		<script>
+			/**************
+                RUN LOOP
+            ***************/
+			document.write("Loop Start <br>");
+			for (var i = 0; i < 10; i++) {
+				/********************************
+                    EXIT LOOP IF CRITERIA MET
+                *********************************/
+				if (i == 5) {
+					break;
+				}
+				document.write(i + "<br>");
+			}
+			document.write("Loop Exited at " + i);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Variable Solution</title>
+	</head>
+	<body>
+		<h2>JavaScript Variables</h2>
+		<p>Strings are written with quotes.</p>
+		<p>Numbers and boolean values are written without quotes.</p>
+		<p id="results"></p>
+		<script>
+			//Assign a number value
+			var varNumber = 3;
+
+			//Assign a string value
+			var varString = "This is a string";
+
+			//Assign a boolean value
+			var varBoolean = false;
+
+			//innerHTML is used here because we are submitting more text in an HTML tag
+			document.getElementById("results").innerHTML = "<b>Your number is:</b> " + varNumber + "<br>" + "<b>Your string is:</b> " + varString + "<br>" + "<b>Your boolean value is:</b> " + varBoolean;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Try Catch Throw Example</title>
+	</head>
+	<body>
+		<p id="inst">Enter a number between 4 and 12.</p>
+		<input type="text" id="number" />
+		<button id="btn" onclick="tryIt()">Submit</button>
+		<p id="results"></p>
+
+		<script>
+			function tryIt() {
+				var num = document.getElementById("number").value;
+				try {
+					//Checks to see if field is blank
+					if (num === "") {
+						throw "Field is empty";
+					}
+					//Checks to see if field is blank
+					if (isNaN(num)) {
+						throw "The input is not a number";
+					}
+					//Checks to see if field is less than 4
+					if (num < 4) {
+						throw "Number is too small.";
+					}
+					//Checks to see if field greater than 12
+					if (num > 12) {
+						throw "Number is too big";
+					}
+
+					//Runs if no errors found
+					document.getElementById("results").innerHTML = "Your Input: <b>" + num + "</b>";
+				} catch (error) {
+					//Code to run if an exception (error) occurs
+					document.getElementById("results").innerHTML = 'Incorrect Input: <b>"' + error + '"</b>';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.ancestors * {
+				display: block;
+				border: 2px solid lightgrey;
+				color: lightgrey;
+				padding: 5px;
+				margin: 15px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<div class="ancestors">
+			body (great-grandparent)
+			<div style="width: 500px">
+				div (grandparent)
+				<ul>
+					ul (direct parent)
+					<li>
+						li (child)
+						<span>span (grandchild)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				//Un-comment the line below to see the results.
+				$("ul").find("span").css({ color: "red", border: "2px solid red" });
+			});
+		</script>
+	</body>
+</html>

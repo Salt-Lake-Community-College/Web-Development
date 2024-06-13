@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Conditional IF Statement Example</title>
+	</head>
+	<body>
+		<h1>Result</h1>
+		<p id="results"></p>
+
+		<script>
+			//Variables set
+			var x = 2;
+			var y = 2;
+
+			//Test if the variables are equal and set the variable z based on the results
+			if (x == y) {
+				var z = "The condition is <b>TRUE</b>";
+			} else {
+				var z = "The condition is <b>FALSE</b>";
+			}
+
+			//Send results to element containing the id "results"
+			document.getElementById("results").innerHTML = z;
+		</script>
+	</body>
+</html>

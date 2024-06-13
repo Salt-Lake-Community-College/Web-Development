@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.highlight {
+				background-color: yellow;
+				padding: 5px 3px;
+				max-width: 200px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS Basic jQuery Solution</title>
+	</head>
+	<body>
+		<p id="first">This is the first paragaph.</p>
+		<p id="second">This is the second paragaph.</p>
+		<script>
+			$("document").ready(function () {
+				//Try changing the selector to "#second"
+				$("#second").addClass("highlight");
+			});
+		</script>
+	</body>
+</html>

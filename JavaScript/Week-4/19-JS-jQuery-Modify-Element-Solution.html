@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.ancestors * {
+				display: block;
+				border: 2px solid lightgrey;
+				color: lightgrey;
+				padding: 5px;
+				margin: 15px;
+			}
+
+			#bigbox {
+				height: 600px;
+				color: darkgreen;
+				border: 2px solid darkgreen;
+				background-color: lightgreen;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<div class="ancestors">
+			body (great-grandparent)
+			<div id="grandparent" style="width: 500px">
+				div (grandparent)
+				<ul>
+					ul (direct parent)
+					<li>
+						li (child)
+						<span>span (grandchild)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				//Un-comment the line below to add the id attribute to the span element and see the results.
+				$("ul").find("span").attr("id", "bigbox");
+				//Un-comment the line below to see what happens when the style attribute is added to the li element
+				$("li").attr("style", "color: red; border: 2px solid maroon; background-color: pink;");
+				//Un-comment the line below to add CSS styles to the UL element. NOTE: Hyphens are removed from CSS Style Properties, uses camel case (i.e. background-color becomes backgroundColor)
+				$("ul").css({ color: "darkblue", border: "2px solid darkblue", backgroundColor: "lightblue" });
+				//PRACTICE: Add another line to change the style of the div element with the id of grandparent to an orange color using either the attr() or css() method
+				//SOLUTION: Using the css() method
+				$("#grandparent").css({ color: "darkorange", border: "2px solid darkorange", backgroundColor: "Moccasin" });
+
+				//SOLUTION: Using the attr() method
+				$("#grandparent").attr("style", "color:darkorange; border: 2px solid darkorange; background-color: Moccasin;");
+			});
+		</script>
+	</body>
+</html>

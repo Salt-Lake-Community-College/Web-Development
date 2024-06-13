@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.highlight {
+				background-color: yellow;
+				padding: 5px 3px;
+				max-width: 200px;
+			}
+
+			p#des {
+				font-weight: bold;
+				font-size: 1.25em;
+			}
+
+			pre,
+			code {
+				font-family: "source-code-pro", Consolas, monospace !important;
+				display: inline-block;
+				background-color: rgba(0, 0, 0, 0.1);
+				padding: 2px 3px;
+				border-radius: 3px;
+			}
+
+			div#filler {
+				max-width: 550px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<h2>
+			<pre style="color: #000000"><span style="color:#000000;">.</span><span style="color:#ff8000;">change</span><span style="color:#804040;">()</span></pre>
+			Event Listener
+		</h2>
+		<p id="des">
+			The
+			<code>change()</code>
+			event occurs when the value of the selected element has been changed (only works on &ltinput&gt, &lttextarea&gt and &ltselect&gt elements).
+		</p>
+		<p id="results">Click in and out the text box below a couple times. Then add some text and click out of the box.</p>
+		<input type="text" name="demo" id="demo" placeholder="Type anything here" />
+
+		<script>
+			$("document").ready(function () {
+				$("#demo").change(function () {
+					$(this).addClass("highlight");
+					$("#results").html("A change event occurred.");
+					$("#results").addClass("highlight");
+				});
+			});
+		</script>
+	</body>
+</html>

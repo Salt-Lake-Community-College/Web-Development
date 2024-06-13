@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Variable Demonstration Example</title>
+	</head>
+	<body>
+		<p>
+			The value of
+			<b>z</b>
+			is:
+			<span id="results"></span>
+		</p>
+		<script>
+			var x, y, z; //Create Variables
+			var x = 5; //Assign x the value of 5
+			var y = 6; //Assign y the value of 6
+			var z = x + y; //Stores the results of adding x and y
+			//Show the value of z
+			document.getElementById("results").innerHTML = z;
+		</script>
+	</body>
+</html>

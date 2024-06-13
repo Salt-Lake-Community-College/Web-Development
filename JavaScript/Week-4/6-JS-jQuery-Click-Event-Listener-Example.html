@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.highlight {
+				background-color: yellow;
+				padding: 5px 3px;
+				max-width: 200px;
+			}
+
+			p#des {
+				font-weight: bold;
+				font-size: 1.15em;
+			}
+
+			pre,
+			code {
+				font-family: "source-code-pro", Consolas, monospace !important;
+				background-color: rgba(0, 0, 0, 0.1);
+				padding: 2px 3px;
+				border-radius: 3px;
+			}
+
+			pre {
+				display: inline-block;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Click Event Listener Example</title>
+	</head>
+	<body>
+		<h2>
+			<pre style="color: #000000"><span style="color:#000000;">.</span><span style="color:#ff8000;">click</span><span style="color:#804040;">()</span></pre>
+			Event Listener
+		</h2>
+		<p id="des">The <code>click()</code> event occurs when the selected element is clicked.</p>
+		<p id="results">Click Me</p>
+
+		<script>
+			$("document").ready(function () {
+				$("#results").click(function () {
+					//Add the class "highlight" to the element
+					$(this).addClass("highlight");
+					//Changes the html content of the element
+					$(this).html("You have added the class <b>highlight</b> to this element.");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Variable Set to a Function Example</title>
+	</head>
+	<body>
+		<script>
+			let x = 6;
+			let y = 2;
+			//Function is assigned to a variable
+			var sum = newSum(x, y);
+			//Variable used to receive results.
+			document.write(sum);
+
+			function newSum(a, b) {
+				//Return keyword sends the results out of the function.
+				return a + b;
+			}
+		</script>
+	</body>
+</html>

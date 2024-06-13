@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Switch Statement Practice</title>
+	</head>
+	<body>
+		<h2 id="results"></h2>
+
+		<script>
+			//Create a variable with a numeric value (stay below 3)
+			var x = 1;
+			//Create a Switch Statement with at least three cases to change a message on the screen ( we are using a variable msg to display the message to an element on the page)
+			switch (x) {
+				case 1:
+					var msg = "This runs the first case.";
+					break;
+				case 2:
+					var msg = "This runs the second case.";
+					break;
+				case 3:
+					var msg = "Thus runs the third case.";
+					break;
+				default:
+					var msg = "No cases are run.";
+			}
+			document.getElementById("results").innerHTML = msg;
+		</script>
+	</body>
+</html>

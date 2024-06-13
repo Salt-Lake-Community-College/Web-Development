@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			.highlight {
+				background-color: yellow;
+				padding: 5px 3px;
+				max-width: 200px;
+			}
+
+			p#des {
+				font-weight: bold;
+				font-size: 1.15em;
+			}
+
+			pre,
+			code {
+				font-family: "source-code-pro", Consolas, monospace !important;
+				display: inline-block;
+				background-color: rgba(0, 0, 0, 0.1);
+				padding: 2px 3px;
+				border-radius: 3px;
+			}
+
+			div#filler {
+				max-width: 550px;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<title>JS jQuery Double Click Event Listener Example</title>
+	</head>
+	<body>
+		<h2>
+			<pre style="color: #000000"><span style="color:#000000;">.</span><span style="color:#ff8000;">keypress</span><span style="color:#804040;">()</span></pre>
+			Event Listener
+		</h2>
+		<p id="des">
+			The
+			<code>keypress()</code>
+			event is similar to the keydown event. The event occurs when a button is pressed down in the selected element.
+		</p>
+
+		<p id="results">Type something in the text box below.</p>
+		<input type="text" name="demo" id="demo" placeholder="Type anything here" />
+		<p><b>NOTE:</b> The keypress event is not fired for all keys (e.g. ALT, CTRL, SHIFT, ESC). Use the keydown() method to also check these keys.</p>
+
+		<script>
+			$("document").ready(function () {
+				$("#demo").keypress(function () {
+					$("#results").html("A key press event occurred.");
+					$("#results").addClass("highlight");
+				});
+			});
+		</script>
+	</body>
+</html>

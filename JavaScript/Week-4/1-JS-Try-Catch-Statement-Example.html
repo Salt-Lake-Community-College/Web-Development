@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS Try Catch Statement Example</title>
+	</head>
+	<body>
+		<p id="results">This should be replaced with the string in the JavaScript code.</p>
+
+		<script>
+			try {
+				//Code to try
+				var ele = document.getElementById(results);
+				ele.innerHTML = "The JavaScript code is sending this to the screen.";
+			} catch (error) {
+				//Code to run if an exception (error) occurs
+				document.write('An exception has been caught: <b>"' + error + '"</b>');
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			p#greeting {
+				font-weight: bold;
+				font-size: 1.75em;
+			}
+			li {
+				font-weight: bold;
+			}
+			span {
+				font-weight: normal;
+			}
+		</style>
+		<title>JS Object Method Example</title>
+	</head>
+	<body>
+		<h1>Car Object</h1>
+		<p>The car's properties are:</p>
+		<ul>
+			<li>
+				<b>Make:</b>
+				<span id="make"></span>
+			</li>
+			<li>
+				<b>Model:</b>
+				<span id="model"></span>
+			</li>
+			<li>
+				<b>Year:</b>
+				<span id="year"></span>
+			</li>
+			<li>
+				<b>Color:</b>
+				<span id="color"></span>
+			</li>
+			<li>
+				<b>Age:</b>
+				<span id="age"></span>
+				years
+			</li>
+		</ul>
+
+		<p id="greeting"></p>
+
+		<script>
+			var car = {
+				make: "Volkswagen",
+				model: "Beetle",
+				year: 1978,
+				color: "Yellow",
+				age: function () {
+					return new Date().getFullYear() - this.year;
+				},
+				/*
+                TRY IT:
+                Create a new method named greeting. Set the method to return a string that reads "This beautiful Volkswagen Beetle is 42 years old."
+                You can use this as a starting point.
+                */
+				greeting: function () {
+					return "This beautiful " + this.make + " " + this.model + " is " + this.age() + " years old.";
+				},
+			};
+
+			document.getElementById("make").innerHTML = car.make;
+			document.getElementById("model").innerHTML = car.model;
+			document.getElementById("year").innerHTML = car.year;
+			document.getElementById("color").innerHTML = car.color;
+			document.getElementById("age").innerHTML = car.age();
+			document.getElementById("greeting").innerHTML = car.greeting();
+		</script>
+	</body>
+</html>
