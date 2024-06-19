@@ -35,6 +35,7 @@
                 return [$heroName, $heroDescription];
             }
 
+            // Call the Function
             list($heroName, $heroDescription) = generateSuperHero($heroAdjectives, $heroNouns, $powers, $missions);
 
             // Display Super Hero Name & Description

@@ -20,6 +20,8 @@
 
             // Function to generate a random superhero name and description
 
+            // Call the Function
+
             // Display Super Hero Name & Hero Description
         ?>
     </main>
