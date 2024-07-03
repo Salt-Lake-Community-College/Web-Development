@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries Solution</title>
+    <style>
+        /* Change the background color of a page based on screen width. */
+        body {
+            /* Add a background-color property with any color value */
+            background-color: lightblue;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                /* Add a background-color property with another different color value */
+                background-color: lightcoral;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1200px) {
+            body {
+                /* Add a background-color property with another different color value */
+                background-color: lightgreen;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            body {
+                /* Add a background-color property with another different color value */
+                background-color: lightyellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        Resize the window to see the background color change.
+    </div>
+</body>
+
+</html>
