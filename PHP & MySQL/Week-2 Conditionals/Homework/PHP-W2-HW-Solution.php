@@ -1,3 +1,11 @@
+<?php
+session_start();
+/*
+session_start needs to be before other code on our site.
+Session data needs to be stored before other data
+or else it won't work when we upload it to a Dreamhost
+  */
+?>
 <!DOCTYPE html>
 <html>
 <body>
@@ -14,7 +22,7 @@
 <!-- Handle Form Submission & Manage Data -->
 <?php
 // store data in array
-session_start();
+
 if (!isset($_SESSION['students'])) {
     $_SESSION['students'] = array();
 }
