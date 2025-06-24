@@ -1,0 +1,201 @@
+/* Define Root Colors */
+:root {
+  --blue: #00205b;
+  --gold: #ffc600;
+  --white: #ffffff;
+  --gray: #f4f4f4;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--gray);
+  color: #333;
+}
+
+header {
+  background-color: var(--blue);
+  padding: 1rem 2rem;
+  color: var(--white);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Branding/Logo */
+nav > a {
+  font-size: 1.3rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Nav Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nav Links */
+nav ul li a {
+  position: relative;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+/* Cool Gold Hover Underline */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  color: var(--gold);
+}
+
+/* Page Layout */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--blue);
+}
+
+section {
+  margin-bottom: 2rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-left: 5px solid var(--gold);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Style */
+form {
+  background-color: var(--white);
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+form div {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--blue);
+  font-family: "Montserrat", sans-serif;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--gray);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--blue);
+  font-family: "Open Sans", sans-serif;
+}
+
+form button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--gold);
+  color: var(--blue);
+}
+
+/*Footer Style*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+/* Responsive Nav (Stack on Small Screens) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}

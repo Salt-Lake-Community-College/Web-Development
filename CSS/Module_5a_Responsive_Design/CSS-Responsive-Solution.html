@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Responsive Grid Solution</title>
+    <style>
+        /* Create a responsive grid layout that changes the number of columns based on the screen size. */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            /* Add a display property with a value of "grid" */
+            display: grid;
+            /* Add a gap property with the value of "10px" */
+            gap: 10px;
+            width: 90%;
+            margin: auto;
+        }
+
+        .grid-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        @media (min-width: 600px) {
+            .grid-container {
+                /* Add a grid-template-columns property with the value of "repeat(2, 1fr)" */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .grid-container {
+                /* Add a grid-template-columns property with the value of "repeat(3, 1fr)" */
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+</body>
+
+</html>
