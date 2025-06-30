@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Search with TMDb</title>
+    <style>
+      #movieInfo {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin-top: 1em;
+      }
+
+      .movie-card {
+        border: 1px solid #ccc;
+        padding: 1em;
+        width: 200px;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+
+      .movie-card img {
+        width: 100%;
+        border-radius: 4px;
+      }
+
+      .movie-card h3 {
+        font-size: 1em;
+        margin: 0.5em 0 0.2em;
+      }
+
+      .movie-card p {
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Find a Movie</h1>
+    <input id="movieTitle" placeholder="Enter a movie title" />
+    <button id="searchMovie">Search</button>
+    <div id="movieInfo"></div>
+
+    <script>
+      const apiKey = "b87a57c6a2eb1f9c17451a6e09b9ea38"; // Your TMDb API key
+      const movieInfoDiv = document.getElementById("movieInfo");
+
+      async function fetchAndDisplayMovies(url) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("Failed to fetch movie data");
+
+          const data = await res.json();
+          const results = data.results;
+
+          if (!results.length) {
+            movieInfoDiv.innerHTML = "<p>No movies found.</p>";
+            return;
+          }
+
+          movieInfoDiv.innerHTML = ""; // Clear previous results
+
+          results.forEach((movie) => {
+            const posterUrl = movie.poster_path
+              ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+              : "https://via.placeholder.com/300x450?text=No+Image";
+
+            const card = document.createElement("div");
+            card.className = "movie-card";
+            card.innerHTML = `
+            <img src="${posterUrl}" alt="${movie.title}" />
+            <h3>${movie.title} (${
+              movie.release_date?.slice(0, 4) || "N/A"
+            })</h3>
+            <p>${
+              movie.overview
+                ? movie.overview.slice(0, 100) + "..."
+                : "No description available."
+            }</p>
+          `;
+            movieInfoDiv.appendChild(card);
+          });
+        } catch (err) {
+          movieInfoDiv.innerHTML = `<p style="color:red;">${err.message}</p>`;
+        }
+      }
+
+      // Load default: recent (now playing) movies on page load
+      window.addEventListener("load", () => {
+        const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+        fetchAndDisplayMovies(nowPlayingUrl);
+      });
+
+      // Search movies by title when button clicked
+      document.getElementById("searchMovie").addEventListener("click", () => {
+        const title = document.getElementById("movieTitle").value.trim();
+        if (!title) return alert("Please enter a movie title to search.");
+
+        const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
+          title
+        )}`;
+        fetchAndDisplayMovies(searchUrl);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "products": [
+      {
+        "id": 101,
+        "name": "Wireless Mouse",
+        "price": 29.99,
+        "inStock": true,
+        "categories": ["electronics", "computer accessories"]
+      },
+      {
+        "id": 102,
+        "name": "Bluetooth Headphones",
+        "price": 59.99,
+        "inStock": false,
+        "categories": ["electronics", "audio"]
+      },
+      {
+        "id": 103,
+        "name": "Coffee Mug",
+        "price": 9.99,
+        "inStock": true,
+        "categories": ["kitchen", "home"]
+      }
+    ]
+  }
+  

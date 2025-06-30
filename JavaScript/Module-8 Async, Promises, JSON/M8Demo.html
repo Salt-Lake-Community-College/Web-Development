@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dog Fetch</title>
+  </head>
+  <body>
+    <h1>Random Dog</h1>
+    <button id="dogBtn">Fetch Dog</button>
+    <br /><br />
+    <img id="dogImage" src="" alt="Random Dog" width="300" />
+    <p id="error" style="color: red"></p>
+
+    <script>
+      document.getElementById("dogBtn").addEventListener("click", async () => {
+        //DOM items to change
+        const img = document.getElementById("dogImage");
+        const errorMsg = document.getElementById("error");
+        errorMsg.textContent = "";
+
+        //try catch to display errors
+        try {
+          const res = await fetch("https://dog.ceo/api/breeds/image/random");
+          if (!res.ok) throw new Error("Failed to fetch dog image.");
+          const data = await res.json();
+          console.log(data);
+          img.src = data.message;
+        } catch (err) {
+          console.error(err);
+          errorMsg.innerHTML =
+            "🐶 Oops! Could not load a dog image. Please try again.";
+          img.src = "";
+        }
+      });
+    </script>
+  </body>
+</html>

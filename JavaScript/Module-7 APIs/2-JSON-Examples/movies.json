@@ -1,0 +1,29 @@
+{
+    "movies": [
+      {
+        "id": "tt0111161",
+        "title": "The Shawshank Redemption",
+        "year": 1994,
+        "genres": ["Drama"],
+        "rating": 9.3,
+        "cast": ["Tim Robbins", "Morgan Freeman"]
+      },
+      {
+        "id": "tt0068646",
+        "title": "The Godfather",
+        "year": 1972,
+        "genres": ["Crime", "Drama"],
+        "rating": 9.2,
+        "cast": ["Marlon Brando", "Al Pacino"]
+      },
+      {
+        "id": "tt0468569",
+        "title": "The Dark Knight",
+        "year": 2008,
+        "genres": ["Action", "Crime", "Drama"],
+        "rating": 9.0,
+        "cast": ["Christian Bale", "Heath Ledger"]
+      }
+    ]
+  }
+  

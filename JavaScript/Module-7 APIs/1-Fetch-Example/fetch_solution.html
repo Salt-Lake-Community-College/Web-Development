@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokémon Search (Practice)</title>
+  </head>
+  <body>
+    <h1>Search for a Pokémon</h1>
+
+    <!-- (OPTIONAL) Instructional Paragraph -->
+    <p>
+      Type the name of a Pokémon (like <strong>pikachu</strong> or
+      <strong>bulbasaur</strong>) into the input box below and click "Search."
+      If the Pokémon exists, its name and ID will be displayed. If not, you'll
+      see an error message.
+    </p>
+
+    <!-- Step 1: Create an input field for the user to type a Pokémon name -->
+    <input id="searchInput" placeholder="e.g., pikachu" />
+
+    <!-- Step 2: Create a button that triggers the fetch -->
+    <button id="searchBtn">Search</button>
+
+    <!-- Step 3: Add placeholders to display result or error -->
+    <p id="result"></p>
+    <p id="error" style="color: red"></p>
+
+    <!-- Step 4: Link your JavaScript file -->
+    <script src="script_fetch_solution.js"></script>
+  </body>
+</html>

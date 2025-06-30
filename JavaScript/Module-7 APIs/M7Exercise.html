@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Advice Generator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f8ff;
+        padding: 40px;
+      }
+      .advice-box {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .advice-text {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 1em;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Need Some Advice?</h1>
+    <div class="advice-box">
+      <div class="advice-text" id="advice">Click the button to get advice.</div>
+      <button onclick="getAdvice()">Get Advice</button>
+    </div>
+
+    <script>
+      function getAdvice() {
+        fetch("https://api.adviceslip.com/advice?" + Date.now())
+          .then((response) => response.json())
+          .then((data) => {
+            const advice = data.slip.advice;
+            document.getElementById("advice").textContent = `"${advice}"`;
+          })
+          .catch((error) => {
+            document.getElementById("advice").textContent =
+              "Oops! Could not fetch advice.";
+            console.error("Error:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

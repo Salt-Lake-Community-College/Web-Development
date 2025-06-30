@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deploy Your Portfolio - Step-by-Step Guide</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-left: 4px solid #2c3e50;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+      code {
+        font-family: monospace;
+        background: #f0f0f0;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      img {
+        max-width: 100%;
+        margin: 1rem 0;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      figcaption {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🚀 Deploy Your Portfolio: Step-by-Step Guide</h1>
+
+    <p>
+      This guide walks you through creating a GitHub repo, cloning it to your
+      computer, cleaning up your portfolio files, and deploying your site to
+      Netlify.
+    </p>
+
+    <h2>📦 Step 1: Create and Clone Your GitHub Repo</h2>
+
+    <ol>
+      <li>
+        <strong>Create a new GitHub repository</strong> (do NOT add a README or
+        .gitignore):
+        <ul>
+          <li>
+            Go to <a href="https://github.com" target="_blank">GitHub.com</a>
+          </li>
+          <li>Click <strong>New</strong> to create a repo</li>
+          <li>Name it something like <code>netlify_portfolio</code></li>
+        </ul>
+      </li>
+
+      <li><strong>Clone the repo to your computer using VS Code</strong>:</li>
+      <pre><code>
+# Open a new terminal in VS Code
+# Make sure you are in the correct Folder for your repository
+# Use the command: git clone &lt;repo_url&gt;
+# Paste your GitHub repo URL in this command
+# Run the command and clone your repo to your computer
+      </code></pre>
+    </ol>
+
+    <h2>🧹 Step 2: Add and Clean Up Your Portfolio Files</h2>
+
+    <ol>
+      <li><strong>View your cloned repo folder in VS Code.</strong></li>
+      <li>
+        <strong
+          >Drag and drop your existing portfolio files into the cloned
+          folder.</strong
+        >
+      </li>
+      <li><strong>Organize your files like this:</strong></li>
+      <pre><code>
+index.html
+
+css/
+  └── style.css
+
+img/
+  └── your-image.jpg
+      </code></pre>
+
+      <figure>
+        <img
+          src="img/folder_structure.png"
+          alt="Correct folder structure example"
+        />
+        <figcaption>Figure 1: Organized project folder structure</figcaption>
+      </figure>
+
+      <li><strong>Update file paths in your HTML:</strong></li>
+      <pre><code>
+&lt;link rel="stylesheet" href="css/style.css"&gt;
+&lt;img src="img/your-image.jpg" alt="Portfolio image"&gt;
+      </code></pre>
+
+      <li>
+        <strong>If showcasing other projects</strong>, create a folder inside
+        your portfolio folder for each project you want to include.
+        <p>
+          ⚠️
+          <em
+            >Each project folder is separate from your main portfolio's
+            <code>index.html</code></em
+          >
+        </p>
+        <pre><code>
+      portfolio-folder/
+        ├── index.html     ← main portfolio homepage
+        ├── css/
+        ├── img/
+        └── project-one/
+              ├── index.html
+              ├── css/
+              │    └── style.css
+              └── img/
+                   └── screenshot.png
+        </code></pre>
+      </li>
+
+      <li>
+        <strong>Test your project locally</strong> by right-clicking
+        <code>index.html</code> and opening in a browser. Make sure images and
+        styles work.
+      </li>
+    </ol>
+
+    <h2>📤 Step 3: Commit and Push to GitHub</h2>
+
+    <ol>
+      <li>
+        <strong>Open the terminal in VS Code</strong> (or use the Git panel).
+      </li>
+      <li><strong>Stage, commit, and push your changes:</strong></li>
+      <pre><code>
+git add .
+git commit -m "Add organized portfolio files"
+git push
+      </code></pre>
+    </ol>
+
+    <h2>🌐 Step 4: Deploy to Netlify</h2>
+
+    <ol>
+      <li>
+        Go to <a href="https://netlify.com" target="_blank">Netlify.com</a> and
+        log in using your GitHub account.
+      </li>
+      <li>
+        Click <strong>Add new site</strong> →
+        <strong>Import an existing project</strong>.
+      </li>
+      <li>Select <strong>GitHub</strong> and authorize access if needed.</li>
+      <li>Choose your <code>portfolio</code> repo from the list.</li>
+      <li>
+        Use these settings:
+        <ul>
+          <li><strong>Branch to deploy:</strong> <code>main</code></li>
+          <li><strong>Build command:</strong> (leave blank)</li>
+          <li><strong>Publish directory:</strong> <code>./</code></li>
+        </ul>
+      </li>
+      <li>Click <strong>Deploy site</strong>.</li>
+      <li>Copy your live Netlify link and share it with your instructor!</li>
+    </ol>
+
+    <h2>💡 Extra Tips</h2>
+    <ul>
+      <li>
+        Be consistent with folder names and file structure across all projects.
+      </li>
+      <li>If your styles or images don’t show, check file paths carefully.</li>
+      <li>
+        After updating your project, redeploy with:
+        <pre><code>
+git add .
+git commit -m "Update site"
+git push
+        </code></pre>
+        Netlify will redeploy automatically!
+      </li>
+    </ul>
+  </body>
+</html>

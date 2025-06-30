@@ -1,0 +1,32 @@
+{
+    "posts": [
+      {
+        "id": 1,
+        "title": "How to Learn JavaScript",
+        "author": "Jane Doe",
+        "date": "2024-06-15",
+        "content": "JavaScript is a versatile programming language...",
+        "comments": [
+          {
+            "user": "Tom",
+            "comment": "Great article!",
+            "date": "2024-06-16"
+          },
+          {
+            "user": "Anna",
+            "comment": "Very helpful, thanks!",
+            "date": "2024-06-17"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "CSS Grid vs Flexbox",
+        "author": "John Smith",
+        "date": "2024-06-10",
+        "content": "Both CSS Grid and Flexbox are powerful layout modules...",
+        "comments": []
+      }
+    ]
+  }
+  

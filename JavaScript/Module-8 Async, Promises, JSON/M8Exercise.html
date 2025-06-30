@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub User Lookup</title>
+    <style>
+      #profile {
+        margin-top: 1em;
+        border: 1px solid #ddd;
+        padding: 1em;
+        border-radius: 8px;
+        max-width: 400px;
+      }
+      img {
+        width: 100px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="username" placeholder="GitHub username" />
+    <button id="search">Search</button>
+    <div id="profile"></div>
+
+    <script>
+      // Wait for the user to click the "Search" button
+      document.getElementById("search").addEventListener("click", async () => {
+        //get the values from the HTML
+        const username = document.getElementById("username").value;
+        const profileDiv = document.getElementById("profile");
+
+        // Optional temporary loading message
+        profileDiv.innerHTML = "Loading...";
+
+        //try...catch to safely handle errors
+        try {
+          /*
+          Use the fetch API to get data from GitHub
+          Use await to pause until we get a response (asynchronous)
+          */
+          const res = await fetch(`https://api.github.com/users/${username}`);
+
+          //throw an error if the response doesn't work
+          if (!res.ok) throw new Error("User not found");
+
+          //convert the response into JSON data
+          const data = await res.json();
+          console.log(data);
+
+          //Update the profileDiv with user information
+          profileDiv.innerHTML = `
+            <img src="${data.avatar_url}" alt="${data.login}" />
+            <h2>${data.name || data.login}</h2>
+            <p>${data.bio || "No bio available."}</p>
+            <p>${data.location || "No bio available."}</p>
+          `;
+        } catch (err) {
+          //if something goes wrong (user doesn't exist) show an error message
+          profileDiv.innerHTML = `<p style="color:red;">${err.message}</p>`;
+        }
+      });
+    </script>
+  </body>
+</html>

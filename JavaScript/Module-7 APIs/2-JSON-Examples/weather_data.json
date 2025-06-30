@@ -1,0 +1,22 @@
+{
+    "location": {
+      "city": "Salt Lake City",
+      "region": "UT",
+      "country": "USA"
+    },
+    "current": {
+      "temperature": 85,
+      "condition": "Sunny",
+      "humidity": 40,
+      "wind": {
+        "speed": 10,
+        "direction": "NW"
+      }
+    },
+    "forecast": [
+      { "day": "Monday", "high": 88, "low": 62, "condition": "Partly Cloudy" },
+      { "day": "Tuesday", "high": 90, "low": 65, "condition": "Sunny" },
+      { "day": "Wednesday", "high": 85, "low": 60, "condition": "Rain" }
+    ]
+  }
+  
