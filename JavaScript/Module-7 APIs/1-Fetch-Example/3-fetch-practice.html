@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Random Advice Generator</title>
     <style>
       body {
@@ -41,23 +41,22 @@
     <h1>Need Some Advice?</h1>
     <div class="advice-box">
       <div class="advice-text" id="advice">Click the button to get advice.</div>
-      <button onclick="getAdvice()">Get Advice</button>
+      <!-- Step 1: When button is clicked, run the function getAdvice() -->
+      <button onclick="">Get Advice</button>
     </div>
 
     <script>
-      function getAdvice() {
-        fetch("https://api.adviceslip.com/advice?" + Date.now())
-          .then((response) => response.json())
-          .then((data) => {
-            const advice = data.slip.advice;
-            document.getElementById("advice").textContent = `"${advice}"`;
-          })
-          .catch((error) => {
-            document.getElementById("advice").textContent =
-              "Oops! Could not fetch advice.";
-            console.error("Error:", error);
-          });
-      }
+      // Step 2: Define the function to get advice from the API
+
+      // Step 3: Ask the advice website for a new piece of advice
+      // Adding Date.now() to avoid cached results and get fresh advice every time
+
+      // Step 4: When the website replies, convert the response to JavaScript object
+
+      // Step 5: Use the advice from the response and show it on the page
+      // Use console.log(data) to see what the API retrieves
+
+      // Step 6: If something goes wrong, show an error message
     </script>
   </body>
 </html>

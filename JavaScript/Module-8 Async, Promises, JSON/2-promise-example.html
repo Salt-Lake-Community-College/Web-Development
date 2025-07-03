@@ -1,0 +1,32 @@
+<!-- promise-example.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise Example</title>
+  </head>
+  <body>
+    <h1>Promise Example</h1>
+    <button id="startBtn">Start Task</button>
+    <div id="output"></div>
+
+    <script>
+      // Create a function that returns a Promise
+      function doTask() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("Task completed!");
+          }, 2000);
+        });
+      }
+
+      document.getElementById("startBtn").addEventListener("click", () => {
+        document.getElementById("output").textContent = "Task started...";
+        // Call the Promise, then handle success with .then()
+        doTask().then((result) => {
+          document.getElementById("output").textContent = result;
+        });
+      });
+    </script>
+  </body>
+</html>

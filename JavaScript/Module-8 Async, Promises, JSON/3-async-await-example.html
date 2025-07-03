@@ -1,0 +1,33 @@
+<!-- async-await-example.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Async/Await Example</title>
+  </head>
+  <body>
+    <h1>Async/Await Example</h1>
+    <button id="startBtn">Start Task</button>
+    <div id="output"></div>
+
+    <script>
+      // Function returns a Promise (simulate async task)
+      function doTask() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("Task completed!");
+          }, 2000);
+        });
+      }
+
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", async () => {
+          document.getElementById("output").textContent = "Task started...";
+          // Use await to wait for Promise to resolve, then update output
+          const result = await doTask();
+          document.getElementById("output").textContent = result;
+        });
+    </script>
+  </body>
+</html>

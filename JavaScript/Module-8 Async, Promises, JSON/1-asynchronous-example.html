@@ -1,0 +1,30 @@
+<!-- async-example.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asynchronous Example</title>
+  </head>
+  <body>
+    <h1>Asynchronous Example (Callback)</h1>
+    <button id="startBtn">Start Task</button>
+    <div id="output"></div>
+
+    <script>
+      // Simulate a long task using setTimeout (runs after 2 seconds)
+      function doTask(callback) {
+        setTimeout(() => {
+          callback("Task completed!");
+        }, 2000);
+      }
+
+      document.getElementById("startBtn").addEventListener("click", () => {
+        document.getElementById("output").textContent = "Task started...";
+        // Call the asynchronous task and give a callback function to run after completion
+        doTask(function (result) {
+          document.getElementById("output").textContent = result;
+        });
+      });
+    </script>
+  </body>
+</html>

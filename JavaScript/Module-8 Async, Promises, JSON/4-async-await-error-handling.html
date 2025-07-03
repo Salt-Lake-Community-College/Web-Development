@@ -1,0 +1,42 @@
+<!-- async-await-error-handling.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Async/Await with Error Handling</title>
+  </head>
+  <body>
+    <h1>Async/Await with Error Handling</h1>
+    <button id="startBtn">Start Task</button>
+    <div id="output"></div>
+
+    <script>
+      // Function returns a Promise which may reject (simulate success or failure)
+      function doTask(shouldFail) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (shouldFail) {
+              reject("Task failed!");
+            } else {
+              resolve("Task completed!");
+            }
+          }, 2000);
+        });
+      }
+
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", async () => {
+          document.getElementById("output").textContent = "Task started...";
+          try {
+            // Call with false to simulate success; change to true to simulate failure
+            const result = await doTask(false);
+            document.getElementById("output").textContent = result;
+          } catch (error) {
+            // Catch any error and display it
+            document.getElementById("output").textContent = error;
+          }
+        });
+    </script>
+  </body>
+</html>

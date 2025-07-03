@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Weather App</title>
+    <link rel="stylesheet" href="./m7_style.css" />
+  </head>
+  <body>
+    <h1>Check Weather</h1>
+
+    <!-- Input field and button -->
+    <input id="city" placeholder="Enter city name" />
+    <button id="getWeather">Get Weather</button>
+
+    <!-- Where the weather info will be shown -->
+    <div id="weatherResult"></div>
+
+    <script>
+      // STEP 1: Add an event listener to the "getWeather" button
+      document
+        .getElementById("getWeather")
+        .addEventListener("click", function () {
+          // STEP 2: Get the city name the user typed in the input box
+          var cityName = document.getElementById("city").value;
+
+          // STEP 3: Set up the API key with the value "a64a224e95b7c1e74ebb3cbc4e7179f7"
+          var apiKey = "a64a224e95b7c1e74ebb3cbc4e7179f7";
+
+          // STEP 4: Make a web URL that asks for the weather in the city
+          // This address includes:
+          // Base URL: "https://api.openweathermap.org/data/2.5/weather?q="
+          // - The city name the user typed
+          // - Separate using "&appid="
+          // - Add your special API key to use the weather service
+          // - A setting to get temperature in Fahrenheit (use "&units=imperial")
+          var apiURL =
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
+            cityName +
+            "&appid=" +
+            apiKey +
+            "&units=imperial";
+
+          // STEP 5: Use fetch() to send the request to the weather server
+          fetch(apiURL)
+            .then(function (response) {
+              // STEP 6: Check if the response was okay
+              if (!response.ok) {
+                // If not, something went wrong (like city not found)
+                throw new Error("City not found");
+              }
+
+              // STEP 7: Convert the server’s response into a JSON object
+              return response.json();
+            })
+            .then(function (data) {
+              // STEP 8: If the data was received successfully, show it on the web page in "weatherResult"
+              var resultDiv = document.getElementById("weatherResult");
+
+              // Add HTML inside that div with the city name, temperature, and weather condition
+              // Hint: use console.log(data) to see what data is being retrieved to help with this part
+              console.log(data);
+              resultDiv.innerHTML =
+                "<h2>" +
+                data.name +
+                "</h2>" +
+                "<p>Temperature: " +
+                data.main.temp +
+                "°F</p>" +
+                "<p>Condition: " +
+                data.weather[0].description +
+                "</p>";
+            })
+            .catch(function (error) {
+              // STEP 9: If something went wrong (like a misspelled city), show the error message
+              document.getElementById("weatherResult").textContent =
+                error.message;
+            });
+        });
+    </script>
+  </body>
+</html>
