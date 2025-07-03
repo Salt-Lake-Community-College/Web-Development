@@ -1,33 +1,43 @@
-<!-- async-await-example.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Async/Await Example</title>
+    <title>Async/Await Example - Building on Promises</title>
   </head>
   <body>
-    <h1>Async/Await Example</h1>
-    <button id="startBtn">Start Task</button>
+    <h1>Async/Await Example - Building on Promises</h1>
+    <button id="startBtn">Start API Task</button>
     <div id="output"></div>
 
     <script>
-      // Function returns a Promise (simulate async task)
+      // Step 1: This function simulates an API call by returning a Promise
+      // It resolves after 2 seconds with a success message
       function doTask() {
         return new Promise((resolve) => {
           setTimeout(() => {
-            resolve("Task completed!");
+            resolve("Task completed successfully using Promise!");
           }, 2000);
         });
       }
 
-      document
-        .getElementById("startBtn")
-        .addEventListener("click", async () => {
-          document.getElementById("output").textContent = "Task started...";
-          // Use await to wait for Promise to resolve, then update output
-          const result = await doTask();
-          document.getElementById("output").textContent = result;
-        });
+      // Step 2: This async function uses "await" to wait for the Promise to finish
+      // Async/await makes the code easier to read than chaining .then() calls
+      async function runApiTask() {
+        // Step 3: Show immediate feedback that the task started
+        document.getElementById("output").textContent = "Task started...";
+
+        // Step 4: Pause here until the Promise returned by doTask resolves
+        const result = await doTask();
+
+        // Step 5: After waiting, show the result on the page
+        document.getElementById("output").textContent = result;
+      }
+
+      // Step 6: Set up the button click to run the async function
+      document.getElementById("startBtn").addEventListener("click", () => {
+        runApiTask();
+        // While waiting, the browser remains responsive — no freezing
+      });
     </script>
   </body>
 </html>

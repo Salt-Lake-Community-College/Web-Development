@@ -1,31 +1,54 @@
-<!-- promise-example.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Promise Example</title>
+    <title>Promise Example with Success and Error Handling</title>
   </head>
   <body>
-    <h1>Promise Example</h1>
+    <h1>Promise Example with Success and Error Handling</h1>
     <button id="startBtn">Start Task</button>
     <div id="output"></div>
 
     <script>
-      // Create a function that returns a Promise
+      // This function simulates the same API call as in File 1,
+      // but now it returns a Promise instead of using callbacks.
+      // This makes the code easier to read and handle success/failure.
       function doTask() {
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
+          // Simulate network delay with setTimeout
           setTimeout(() => {
-            resolve("Task completed!");
+            // Randomly decide success or failure (50% chance)
+            const didFail = Math.random() < 0.5;
+
+            if (didFail) {
+              // If failed, reject the Promise with an error message
+              reject("Task failed! Something went wrong.");
+            } else {
+              // If successful, resolve the Promise with a success message
+              resolve("Task completed successfully!");
+            }
           }, 2000);
         });
       }
 
+      // When the user clicks the button, start the task
       document.getElementById("startBtn").addEventListener("click", () => {
+        // Show immediate feedback that task started
         document.getElementById("output").textContent = "Task started...";
-        // Call the Promise, then handle success with .then()
-        doTask().then((result) => {
-          document.getElementById("output").textContent = result;
-        });
+
+        // Call the Promise-based doTask function
+        // Use .then() for success and .catch() for errors
+        doTask()
+          .then((result) => {
+            // Show the success message returned by resolve()
+            document.getElementById("output").textContent = result;
+          })
+          .catch((error) => {
+            // Show the error message returned by reject()
+            document.getElementById("output").textContent = error;
+          });
+
+        // Browser stays responsive while waiting — no freezing!
       });
     </script>
   </body>

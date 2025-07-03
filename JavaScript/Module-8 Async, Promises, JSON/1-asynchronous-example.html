@@ -1,29 +1,40 @@
-<!-- async-example.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Asynchronous Example</title>
+    <title>Asynchronous Example (Callbacks and APIs)</title>
   </head>
   <body>
-    <h1>Asynchronous Example (Callback)</h1>
-    <button id="startBtn">Start Task</button>
+    <h1>Asynchronous Example Using Callbacks (Simulating API)</h1>
+    <button id="startBtn">Start API Task</button>
     <div id="output"></div>
 
     <script>
-      // Simulate a long task using setTimeout (runs after 2 seconds)
-      function doTask(callback) {
+      // This function simulates an API call that takes 2 seconds
+      // Instead of using a real API, we use setTimeout to mimic delay
+      // It takes a callback to handle the "response"
+      function fakeApiCall(callback) {
+        // Step 1: Start a timer to simulate network delay
         setTimeout(() => {
-          callback("Task completed!");
+          // Step 4: After 2 seconds, "return" data via the callback
+          callback("API response received: Task completed in 2 seconds!");
         }, 2000);
+
+        // Step 2: IMPORTANT — fakeApiCall() finishes immediately,
+        // so JavaScript can continue running while waiting for response
       }
 
       document.getElementById("startBtn").addEventListener("click", () => {
-        document.getElementById("output").textContent = "Task started...";
-        // Call the asynchronous task and give a callback function to run after completion
-        doTask(function (result) {
-          document.getElementById("output").textContent = result;
+        // Step 3: Show message immediately that API request started
+        document.getElementById("output").textContent = "API call started...";
+
+        // Step 5: Call the fake API and provide a callback to handle the response
+        fakeApiCall(function (response) {
+          // Step 6: This runs after 2 seconds when the "response" arrives
+          document.getElementById("output").textContent = response;
         });
+
+        // Meanwhile, the browser stays responsive — no freezing
       });
     </script>
   </body>

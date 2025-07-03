@@ -11,23 +11,38 @@
     <p id="error" style="color: red"></p>
 
     <script>
+      // Step 1: Wait for the user to click the "Fetch Dog" button
       document.getElementById("dogBtn").addEventListener("click", async () => {
-        //DOM items to change
+        // Step 2: Get references to the image and error message elements
         const img = document.getElementById("dogImage");
         const errorMsg = document.getElementById("error");
+
+        // Step 3: Clear any previous error messages before starting
         errorMsg.textContent = "";
 
-        //try catch to display errors
+        // Step 4: Use try...catch to handle errors during the fetch request
         try {
+          // Step 5: Make an API call to get a random dog image
           const res = await fetch("https://dog.ceo/api/breeds/image/random");
+
+          // Step 6: Check if the response is okay (status 200-299)
           if (!res.ok) throw new Error("Failed to fetch dog image.");
+
+          // Step 7: Convert the response to JSON so we can use the data
           const data = await res.json();
+
+          // Step 8: Log the data to the console (for debugging)
           console.log(data);
+
+          // Step 9: Update the image's src attribute with the URL from the API
           img.src = data.message;
         } catch (err) {
+          // Step 10: If there was an error, show a friendly message on the page
           console.error(err);
           errorMsg.innerHTML =
             "🐶 Oops! Could not load a dog image. Please try again.";
+
+          // Step 11: Clear the image since we couldn’t load a new one
           img.src = "";
         }
       });

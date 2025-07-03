@@ -24,39 +24,50 @@
     <div id="profile"></div>
 
     <script>
-      // Wait for the user to click the "Search" button
+      // Step 1: Add a click listener to the "Search" button
+      // The function is marked async because we use await inside it
       document.getElementById("search").addEventListener("click", async () => {
-        //get the values from the HTML
+        // Step 2: Get the username typed in by the user
         const username = document.getElementById("username").value;
+        // Step 3: Get the div where we will show the profile info or errors
         const profileDiv = document.getElementById("profile");
 
-        // Optional temporary loading message
+        // Step 4: Show a temporary loading message while waiting for data
         profileDiv.innerHTML = "Loading...";
 
-        //try...catch to safely handle errors
+        // Step 5: Use try...catch to handle errors (like user not found or network errors)
         try {
-          /*
-          Use the fetch API to get data from GitHub
-          Use await to pause until we get a response (asynchronous)
+          /* 
+            Step 6: Make an asynchronous API request to GitHub using fetch().
+            fetch() returns a Promise that resolves when the response arrives.
+            Using await pauses the code here until the Promise resolves,
+            without freezing the page.
           */
           const res = await fetch(`https://api.github.com/users/${username}`);
 
-          //throw an error if the response doesn't work
+          // Step 7: Check if the HTTP response is OK (status 200-299)
+          // If not, throw an error to jump to the catch block
           if (!res.ok) throw new Error("User not found");
 
-          //convert the response into JSON data
+          /*
+            Step 8: Convert the response body to JSON.
+            res.json() also returns a Promise, so we await it.
+          */
           const data = await res.json();
+
+          // Step 9: Log data to the console for debugging
           console.log(data);
 
-          //Update the profileDiv with user information
+          // Step 10: Update the page with the user’s info using the JSON data
           profileDiv.innerHTML = `
             <img src="${data.avatar_url}" alt="${data.login}" />
             <h2>${data.name || data.login}</h2>
             <p>${data.bio || "No bio available."}</p>
-            <p>${data.location || "No bio available."}</p>
+            <p>${data.location || "No location available."}</p>
           `;
         } catch (err) {
-          //if something goes wrong (user doesn't exist) show an error message
+          // Step 11: If any error happens (bad username or network issues),
+          // show an error message on the page
           profileDiv.innerHTML = `<p style="color:red;">${err.message}</p>`;
         }
       });
