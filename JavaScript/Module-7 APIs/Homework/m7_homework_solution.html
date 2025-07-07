@@ -15,6 +15,18 @@
     <div id="weatherResult"></div>
 
     <script>
+      /*
+        (OPTIONAL) HOW TO GET YOUR OWN WEATHER API KEY 
+
+        1. Go to https://openweathermap.org/api
+        2. Click "Sign Up" (top right) and create a free account
+        3. After signing in, go to https://home.openweathermap.org/api_keys
+        4. Click "Create" to generate your own API key
+        5. Copy the key and replace it below where it says `YOUR_API_KEY_HERE`
+        6. ⚠️ DO NOT share your API key publicly — it's like a password to your API data!
+      */
+
+      //HOMEWORK INSTRUCTIONS
       // STEP 1: Add an event listener to the "getWeather" button
       document
         .getElementById("getWeather")
@@ -22,8 +34,9 @@
           // STEP 2: Get the city name the user typed in the input box
           var cityName = document.getElementById("city").value;
 
-          // STEP 3: Set up the API key with the value "a64a224e95b7c1e74ebb3cbc4e7179f7"
-          var apiKey = "a64a224e95b7c1e74ebb3cbc4e7179f7";
+          // STEP 3: If you plan on sharing your project or hosting it use this demo key instead of setting up your own
+          // Set up the API key with the value "bd5e378503939ddaee76f12ad7a97608"
+          var apiKey = "bd5e378503939ddaee76f12ad7a97608"; // DEMO KEY
 
           // STEP 4: Make a web URL that asks for the weather in the city
           // This address includes:

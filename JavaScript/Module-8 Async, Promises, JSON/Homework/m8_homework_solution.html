@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Search App - Step by Step</title>
+    <link rel="stylesheet" href="./css/moviestyle.css" />
+  </head>
+  <body>
+    <h1>Find a Movie</h1>
+
+    <div>
+      <input id="movieTitle" placeholder="Enter a movie title" />
+      <button id="searchMovie">Search</button>
+    </div>
+
+    <div id="movieInfo"></div>
+
+    <script>
+      /*
+      HOW TO GET YOUR OWN TMDb API KEY:
+
+      1. Go to https://www.themoviedb.org/account/signup and create a free account.
+      2. Verify your email and log in.
+      3. Go to your account settings → API section: https://www.themoviedb.org/settings/api
+      4. Click "Create" to apply for an API key (use it for educational/non-commercial purposes).
+      5. Copy your key and replace the demo key below.
+      6. ⚠️ Keep your key private — don't share it publicly or commit it to public repos.
+      */
+
+      /* STEP 1: Store your API Key
+      Use this API key for now (Replace it later with your own)
+      */
+      const apiKey = "b87a57c6a2eb1f9c17451a6e09b9ea38"; // Demo key - store into a variable for easy reuse
+
+      // STEP 2: Select the place on the DOM where the movies will appear
+      const movieInfoDiv = document.getElementById("movieInfo");
+
+      /* STEP 3: Write an async function called fetchAndDisplayMovies(url)
+      - Use await fetch(url) to request data from the API
+      - Check if the response is OK, throw an error if not
+      - Parse the JSON from the response with await.res.json()
+      */
+      async function fetchAndDisplayMovies(url) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("Failed to fetch movie data");
+          const data = await res.json();
+
+          /*STEP 4a: Process and Display the Movie Results
+          - Extract the movie array from data.results using a variable
+          - If no movies are found, show a friendly message
+          - Clear the movie results container before showing new results
+          */
+          const results = data.results;
+
+          if (!results.length) {
+            movieInfoDiv.innerHTML = "<p>No movies found.</p>";
+            return;
+          }
+
+          movieInfoDiv.innerHTML = "";
+
+          /* Step 4b:
+            - Loop through each movie and create a "card" with:
+                - Poster image (or a placeholder if missing)
+                - Movie title and release year
+                - Short description or fallback text
+          */
+          results.forEach((movie) => {
+            const posterUrl = movie.poster_path
+              ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+              : "https://via.placeholder.com/300x450?text=No+Image";
+
+            const card = document.createElement("div");
+            card.className = "movie-card";
+            card.innerHTML = `
+              <img src="${posterUrl}" alt="${movie.title}" />
+              <h3>${movie.title} (${
+              movie.release_date?.slice(0, 4) || "N/A"
+            })</h3>
+              <p>${
+                movie.overview
+                  ? movie.overview.slice(0, 100) + "..."
+                  : "No description available."
+              }</p>
+            `;
+            movieInfoDiv.appendChild(card);
+          });
+        } catch (err) {
+          //STEP 5: Handle Errors Gracefully
+          //In your catch block, show the error message in red inside the DOM container
+          movieInfoDiv.innerHTML = `<p style="color:#ff3c00;">${err.message}</p>`;
+        }
+      }
+
+      /*STEP 6: Load "Now Playing" Movies when the Page Loads
+      - Use window.addEventListener("load", ...)
+      - Call your fetchAndDisplayMovies() with the "now playing" API URL
+      */
+      window.addEventListener("load", () => {
+        const nowPlayingUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+        fetchAndDisplayMovies(nowPlayingUrl);
+      });
+
+      /*STEP 7: Add Search Button Functionality
+      - Add a click event listener to the search button
+      - Get the input text, and alert if empty
+      - Build the search URL using the input and API key
+      - Call fetchAndDisplayMovies() with the search URL
+      */
+      document.getElementById("searchMovie").addEventListener("click", () => {
+        const title = document.getElementById("movieTitle").value;
+        if (!title) {
+          alert("Please enter a movie title.");
+          return;
+        }
+        const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
+          title
+        )}`;
+        fetchAndDisplayMovies(searchUrl);
+      });
+    </script>
+  </body>
+</html>
