@@ -13,7 +13,7 @@ btn.addEventListener("click", () => {
   // Step 4: Get the name entered by the user, convert to lowercase and remove spaces
   const name = input.value.toLowerCase().trim();
 
-  // Step 5: If input is empty, show error and stop
+  // Step 5: If name entered by the user is empty, show error and stop
   if (!name) {
     error.innerHTML = "Please enter a Pokémon name.";
     return;

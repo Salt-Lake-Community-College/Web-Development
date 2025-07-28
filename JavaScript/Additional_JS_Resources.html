@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SLCC JavaScript Additional Resources</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🚀</text></svg>"
+      type="image/svg+xml"
+    />
+
+    <style>
+      html {
+        scroll-padding-top: 70px;
+      }
+      body {
+        font-family: "Open Sans", Arial, sans-serif;
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 0;
+        color: #005566;
+      }
+      nav {
+        background-color: #003087;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 700;
+      }
+      nav a:hover {
+        color: #ffc107;
+      }
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #005566;
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: #003087;
+        font-size: 1.8em;
+        margin-top: 30px;
+      }
+      .intro,
+      .tips {
+        background: #e0e0e0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .tips ul {
+        text-align: left;
+        margin: 0 auto;
+        max-width: 600px;
+        list-style: none;
+        padding-left: 0;
+      }
+      .tips li {
+        margin-bottom: 10px;
+      }
+      .resource-card {
+        background: #ffffff;
+        border: 2px solid #00a0b0;
+        border-radius: 8px;
+        margin: 10px 0;
+        padding: 15px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      .resource-card:hover {
+        transform: scale(1.02);
+        border-color: #ffc107;
+      }
+      .resource-title {
+        font-size: 1.4em;
+        color: #005566;
+        font-weight: 700;
+        margin: 0;
+      }
+      .resource-details {
+        display: none;
+        margin-top: 10px;
+        text-align: left;
+        font-size: 1em;
+        color: #333;
+      }
+      .resource-details.show {
+        display: block;
+      }
+      .resource-details a {
+        color: #00a0b0;
+        text-decoration: none;
+      }
+      .resource-details a:hover {
+        color: #ffc107;
+      }
+      #randomTipBtn {
+        background-color: #ffc107;
+        color: #005566;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: 700;
+      }
+      #randomTipBtn:hover {
+        background-color: #e6a700;
+      }
+      #randomTip {
+        margin-top: 10px;
+        font-style: italic;
+        color: #003087;
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.5em;
+        }
+        nav a {
+          margin: 0 10px;
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#intro">Home</a>
+      <a href="#tutorials">Tutorials</a>
+      <a href="#projects">Projects</a>
+      <a href="#challenges">Challenges</a>
+      <a href="#games">Games</a>
+    </nav>
+    <main>
+      <section id="intro">
+        <h1>SLCC JavaScript Additional Resources</h1>
+        <div class="intro">
+          <p>
+            Welcome to your JavaScript adventure, SLCC students! Explore these
+            awesome resources to master JavaScript, build cool projects, and
+            have fun coding. From tutorials to games, there’s something for
+            everyone. Click a resource card to dive in!
+          </p>
+        </div>
+      </section>
+
+      <section id="how-to-start">
+        <div class="tips">
+          <h2>🎯 How to Start Without Feeling Overwhelmed</h2>
+          <p>
+            You’re ready to become a JavaScript pro! Here’s how to use these
+            resources:
+          </p>
+          <ul>
+            <li>
+              🕒 <strong>Start Small</strong>: Try W3Schools or SoloLearn for
+              10–15 minutes a day to practice basics like loops and APIs.
+            </li>
+            <li>
+              🛠️ <strong>Build Projects</strong>: Create one project from The
+              Odin Project or JavaScript30 to apply Fetch API skills from Module
+              7.
+            </li>
+            <li>
+              💡 <strong>Solve Challenges</strong>: Tackle a LeetCode or
+              Codewars challenge weekly to practice async code from Week 15.
+            </li>
+            <li>
+              🎮 <strong>Play Games</strong>: Try CodeCombat for fun practice
+              with event-driven coding.
+            </li>
+            <li>
+              🏫 <strong>Use SLCC Access</strong>: Log into LinkedIn Learning
+              with your school account for free video lessons.
+            </li>
+            <li>
+              📚 <strong>Learn Deeply</strong>: Use MDN Web Docs to understand
+              promises and async/await from Week 15.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tutorials">
+        <h2>📚 Tutorials</h2>
+        <div class="resource-card" onclick="toggleDetails('tut1')">
+          <div class="resource-title">Eloquent JavaScript</div>
+          <div class="resource-details" id="tut1">
+            <p>
+              A free online book covering JavaScript basics to advanced topics
+              like async programming.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://eloquentjavascript.net/" target="_blank"
+                >eloquentjavascript.net</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Read a chapter weekly to master Week 15’s
+              async concepts.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('tut2')">
+          <div class="resource-title">W3Schools JavaScript</div>
+          <div class="resource-details" id="tut2">
+            <p>
+              Free, interactive tutorials on JavaScript, APIs, and DOM. Try
+              examples in your browser!
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://www.w3schools.com/js/default.asp" target="_blank"
+                >w3schools.com/js</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Practice the Fetch API section for Module 7.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('tut3')">
+          <div class="resource-title">MDN Web Docs: JavaScript</div>
+          <div class="resource-details" id="tut3">
+            <p>
+              The best resource for JavaScript, with guides on promises and
+              async/await for Week 15.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                target="_blank"
+                >developer.mozilla.org</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Check the async/await guide for clear
+              explanations.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('tut4')">
+          <div class="resource-title">freeCodeCamp JavaScript</div>
+          <div class="resource-details" id="tut4">
+            <p>
+              Free lessons and challenges on JavaScript, including APIs and
+              functions.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+                target="_blank"
+                >freecodecamp.org</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Try API challenges to practice JSON parsing.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('tut5')">
+          <div class="resource-title">
+            LinkedIn Learning: JavaScript Essential Training
+          </div>
+          <div class="resource-details" id="tut5">
+            <p>
+              Video lessons on JavaScript, DOM, and APIs. Use your SLCC account
+              to access.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://www.linkedin.com/learning/javascript-essential-training/"
+                target="_blank"
+                >linkedin.com/learning</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Watch the async section to support Week 15
+              projects.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('tut6')">
+          <div class="resource-title">Web Dev Simplified (YouTube)</div>
+          <div class="resource-details" id="tut6">
+            <p>
+              Free YouTube tutorials with practical JavaScript projects and
+              async programming tips.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://www.youtube.com/c/WebDevSimplified"
+                target="_blank"
+                >youtube.com/c/WebDevSimplified</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Watch the Fetch API videos to reinforce
+              Module 7 skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>🛠️ Projects</h2>
+        <div class="resource-card" onclick="toggleDetails('proj1')">
+          <div class="resource-title">The Odin Project</div>
+          <div class="resource-details" id="proj1">
+            <p>
+              A free, full-stack JavaScript curriculum with hands-on projects to
+              build portfolio-worthy websites.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://www.theodinproject.com/" target="_blank"
+                >theodinproject.com</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Build a project to practice Fetch and async
+              code, like Module 7’s Advice Generator.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('proj2')">
+          <div class="resource-title">Frontend Mentor</div>
+          <div class="resource-details" id="proj2">
+            <p>
+              Free front-end projects with designs provided. Add JavaScript for
+              interactivity.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://www.frontendmentor.io/challenges?type=free%2Cfree-plus"
+                target="_blank"
+                >frontendmentor.io</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Create a project to practice dynamic
+              updates.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('proj3')">
+          <div class="resource-title">JavaScript30</div>
+          <div class="resource-details" id="proj3">
+            <p>
+              A free 30-day challenge to build 30 JavaScript projects with video
+              tutorials.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://javascript30.com" target="_blank"
+                >javascript30.com</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Try an API-based project for Module 7
+              practice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="challenges">
+        <h2>💡 Challenges</h2>
+        <div class="resource-card" onclick="toggleDetails('chal1')">
+          <div class="resource-title">SoloLearn JavaScript</div>
+          <div class="resource-details" id="chal1">
+            <p>
+              Free, bite-sized lessons and quizzes, like Duolingo for coding.
+              Use the app anywhere!
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://www.sololearn.com/" target="_blank"
+                >sololearn.com</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Do a daily quiz to reinforce APIs.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('chal2')">
+          <div class="resource-title">Coddy.tech JavaScript Challenges</div>
+          <div class="resource-details" id="chal2">
+            <p>
+              Free coding challenges to practice JavaScript, from beginner to
+              advanced.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://coddy.tech/explore/tag/javascript"
+                target="_blank"
+                >coddy.tech</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Solve a challenge for Week 15 async
+              practice.
+            </p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('chal3')">
+          <div class="resource-title">Codewars</div>
+          <div class="resource-details" id="chal3">
+            <p>
+              Free JavaScript challenges to test and compare your solutions.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://www.codewars.com/" target="_blank"
+                >codewars.com</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Try a promise-based kata for Week 15.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('chal4')">
+          <div class="resource-title">LeetCode</div>
+          <div class="resource-details" id="chal4">
+            <p>
+              Free coding challenges to practice JavaScript and algorithms, from
+              beginner to advanced.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://leetcode.com/" target="_blank">leetcode.com</a>
+            </p>
+            <p>
+              <strong>Tip</strong>: Solve a JavaScript problem to sharpen logic
+              for Week 15’s async programming.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="games">
+        <h2>🎮 Coding Games</h2>
+        <div class="resource-card" onclick="toggleDetails('game1')">
+          <div class="resource-title">CodingGame</div>
+          <div class="resource-details" id="game1">
+            <p>
+              Free games where you write JavaScript to solve puzzles and control
+              characters.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://www.codingame.com/start/" target="_blank"
+                >codingame.com</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Play a game to practice logic.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('game2')">
+          <div class="resource-title">CodeCombat</div>
+          <div class="resource-details" id="game2">
+            <p>A free game where you code a hero’s actions in JavaScript.</p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://codecombat.com/" target="_blank"
+                >codecombat.com</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Try a level for fun function practice.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('game3')">
+          <div class="resource-title">Untrusted</div>
+          <div class="resource-details" id="game3">
+            <p>A free game where you edit JavaScript to solve puzzles.</p>
+            <p>
+              <strong>Link</strong>:
+              <a
+                href="https://alexnisnevich.github.io/untrusted/"
+                target="_blank"
+                >alexnisnevich.github.io/untrusted</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Play to practice problem-solving.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('game4')">
+          <div class="resource-title">Robocode</div>
+          <div class="resource-details" id="game4">
+            <p>
+              A free game where you program a robot in JavaScript to battle.
+            </p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://robocode.sourceforge.io/" target="_blank"
+                >robocode.sourceforge.io</a
+              >
+            </p>
+            <p><strong>Tip</strong>: Try for event-driven coding practice.</p>
+          </div>
+        </div>
+        <div class="resource-card" onclick="toggleDetails('game5')">
+          <div class="resource-title">Elevator Saga</div>
+          <div class="resource-details" id="game5">
+            <p>A free game where you write JavaScript to control elevators.</p>
+            <p>
+              <strong>Link</strong>:
+              <a href="https://play.elevatorsaga.com/" target="_blank"
+                >play.elevatorsaga.com</a
+              >
+            </p>
+            <p>
+              <strong>Tip</strong>: Play to practice async-like event handling.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <button id="randomTipBtn">Get a Random Coding Tip!</button>
+      <p id="randomTip"></p>
+    </main>
+
+    <script>
+      function toggleDetails(id) {
+        const details = document.getElementById(id);
+        const isVisible = details.classList.contains("show");
+        document.querySelectorAll(".resource-details").forEach((el) => {
+          el.classList.remove("show");
+        });
+        if (!isVisible) {
+          details.classList.add("show");
+        }
+      }
+
+      const tips = [
+        "Code 15 minutes a day to become a JavaScript pro! 🚀",
+        "Explore MDN Web Docs for clear async/await guides. 📚",
+        "Build a project with The Odin Project to shine in your portfolio! 🛠️",
+        "Play CodeCombat to make coding fun and easy! 🎮",
+        "Try a LeetCode or Codewars challenge to master Week 15 async skills. 💡",
+        "Watch Web Dev Simplified on YouTube for Fetch API tips. 🌐",
+        "Use your SLCC LinkedIn Learning account for free lessons! 🏫",
+      ];
+
+      document.getElementById("randomTipBtn").addEventListener("click", () => {
+        const randomTip = document.getElementById("randomTip");
+        const randomIndex = Math.floor(Math.random() * tips.length);
+        randomTip.textContent = tips[randomIndex];
+      });
+    </script>
+  </body>
+</html>

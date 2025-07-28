@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Advice Generator</title>
     <style>
       body {
@@ -22,6 +22,7 @@
       .advice-text {
         font-size: 1.5em;
         margin-bottom: 20px;
+        display: block;
       }
       button {
         background-color: #4caf50;
@@ -32,8 +33,31 @@
         border-radius: 6px;
         cursor: pointer;
       }
-      button:hover {
+      button:hover:not(:disabled) {
         background-color: #45a049;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      /* Spinner styles */
+      .loader {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #4caf50;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
@@ -41,22 +65,40 @@
     <h1>Need Some Advice?</h1>
     <div class="advice-box">
       <div class="advice-text" id="advice">Click the button to get advice.</div>
+      <div class="loader" id="loader"></div>
       <!-- Step 1: When button is clicked, run the function getAdvice() -->
-      <button onclick="">Get Advice</button>
+      <button id="adviceBtn" onclick="getAdvice()">Get Advice</button>
     </div>
 
     <script>
       // Step 2: Define the function to get advice from the API
+      function getAdvice() {
+        const loader = document.getElementById("loader");
+        loader.style.display = "block";
 
-      // Step 3: Ask the advice website for a new piece of advice
-      // Adding Date.now() to avoid cached results and get fresh advice every time
+        // Step 3: Get the button and advice div from the DOM
 
-      // Step 4: When the website replies, convert the response to JavaScript object
+        // Step 4: set the display of the advice div to none
+        // disable the button
 
-      // Step 5: Use the advice from the response and show it on the page
-      // Use console.log(data) to see what the API retrieves
-
-      // Step 6: If something goes wrong, show an error message
+        // Step 5: Use fetch to get advice from the API at "https://api.adviceslip.com/advice"
+        fetch("https://api.adviceslip.com/advice")
+          // Step 6: Use .then() Check if the website replied successfully
+          .then((response) => {
+            // Throw an error on an incorrect response
+            // Convert the response to a JSON
+          })
+          // Step 7: Use .then() to show advice on the page in the advice div
+          .then((data) => {
+            loader.style.display = "none";
+            button.disabled = false;
+          })
+          // Step 8: If something goes wrong, show an error message
+          .catch((error) => {
+            loader.style.display = "none";
+            button.disabled = false;
+          });
+      }
     </script>
   </body>
 </html>
