@@ -11,7 +11,7 @@
   // Step 4: Get the name entered by the user, convert to lowercase and remove spaces
   // Hint we can use .toLowerCase() and .trim() to accomplish this
 
-  // Step 5: If input is empty, show error and stop
+  // Step 5: If name entered by the user is empty, show error and stop
 
   // Step 6: Use fetch to get data from the API
   // API URL format: https://pokeapi.co/api/v2/pokemon/POKEMON_NAME
